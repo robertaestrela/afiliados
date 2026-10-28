@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EstrelaGames · Programa de afiliados</title>
+<meta name="description" content="Novo produto, nova renda. Indique o EstrelaGames e receba 40% da taxa das mesas dos seus indicados.">
+<meta name="robots" content="noindex">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens =====
+   EstrelaGames · LP de afiliados. Mesmo padrão visual das LPs white label (modelo aprovado). */
+:root{
+  /* marca:start · EstrelaGames */
+  --brand:#2a57d6; --brand-strong:#1d3c9e; --brand-soft:#8fb8ff; --brand-deep:#141e2a;
+  --on-brand:#ffffff; --deep-a80:#141e2acc;
+  --brand-a12:#5e95ff1f; --brand-a16:#5e95ff29; --brand-a20:#5e95ff33; --brand-a24:#5e95ff3d; --brand-a30:#5e95ff4d; --brand-glow:#5e95ff52;
+  --ink:#2a57d6; --ink-a12:#2a57d61f; --ink-a16:#2a57d629; --hl-bg:#2a57d6; --hl-on:#ffffff;
+  --g1:#ffd800; --g2:#ff7300;
+  --felt-1:#1f5a4a; --felt-2:#0f2e2a; --felt-edge:#0a1f1c;
+  --logo-onlight:none; --logo-mono:grayscale(1);
+  --hero-pos:70% center; --hero-pos-m:80% center;
+  /* marca:end */
+  /* neutros DS */
+  --bg:#0a0a0b; --s1:#111113; --s2:#19191b; --s3:#222325; --s4:#292a2e;
+  --line:#ffffff14; --line-2:#ffffff1f;
+  --text:#eeeef0; --muted:#b2b3bd; --subtle:#5f606a;
+  --l-bg:#f2f2f4; --l-card:#ffffff; --l-text:#111113; --l-muted:#5f606a; --l-line:#0000001a; --l-dim:#c4c4ca;
+  --f-ui:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+  --f-disp:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1312px; --gut:32px; --sec:120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth;background:var(--bg);overflow-x:clip}
+body{background:var(--bg);color:var(--text);font:400 16px/24px var(--f-ui);overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--gut)*2);margin:0 auto;padding:0 var(--gut)}
+.sec{position:relative;z-index:1;padding:var(--sec) 0;background:var(--bg)}
+.center{text-align:center}
+.flow>*,.tri>*,.calc>*,.take>*,.why>*,.plans>*,.prods>*,.seu-cards>*{min-width:0}
+
+/* folhas claras: cantos grandes e 8px de respiro nas laterais (estilo Apple) */
+.light{background:var(--l-bg);color:var(--l-text);margin:0 8px;border-radius:48px}
+
+/* ===== Títulos em curvas (Industry → SVG pelo build) ===== */
+.ttl{display:block;min-width:0;font-size:64px}
+.ttl.xl{font-size:88px} .ttl.l{font-size:64px} .ttl.m{font-size:48px} .ttl.s{font-size:32px}
+.ol{display:block;line-height:0;font-family:"Industry",sans-serif;font-weight:700;text-transform:uppercase}
+.ol svg{display:block;height:.7em;width:calc(var(--em)*1em);overflow:visible}
+.ol+.ol{margin-top:.26em}
+.center .ol svg{margin-inline:auto}
+/* duas cores na mesma linha */
+.olrow{display:flex;flex-wrap:nowrap;gap:.28em}
+.olrow .ol+.ol{margin-top:0}
+.ol.brand{color:var(--brand-soft)} .light .ol.brand{color:var(--ink)}
+.ol.dim{color:var(--subtle)} .light .ol.dim{color:var(--l-dim)}
+
+/* ===== Texto ===== */
+.st{font:600 48px/56px var(--f-disp);letter-spacing:-.035em}
+.lead{font:400 20px/32px var(--f-ui);letter-spacing:-.01em;color:var(--muted)}
+.light .lead{color:var(--l-muted)}
+.p-l{font:400 20px/32px var(--f-ui);letter-spacing:-.01em}
+.p-m{font:400 16px/24px var(--f-ui)}
+.p-s{font:400 14px/20px var(--f-ui)}
+.mut{color:var(--muted)} .light .mut{color:var(--l-muted)}
+.lbl{font:600 12px/16px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.light .lbl{color:var(--l-muted)}
+.h3{font:600 24px/32px var(--f-disp);letter-spacing:-.02em}
+.h4{font:600 20px/28px var(--f-disp);letter-spacing:-.01em}
+.kick{display:flex;align-items:center;gap:12px;margin-bottom:32px;font:600 14px/20px var(--f-ui);color:var(--muted)}
+.kick b{font-weight:600;color:var(--brand-soft);font-variant-numeric:tabular-nums}
+.kick i{width:32px;height:1px;background:currentColor;opacity:.4}
+.light .kick{color:var(--l-muted)} .light .kick b{color:var(--ink)}
+.center .kick{justify-content:center}
+.head{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:end}
+.head>*{min-width:0}
+.head .lead{padding-bottom:4px}
+.center .lead{max-width:640px;margin:24px auto 0}
+
+/* ===== Botões (Apple · pílula + círculo com seta) ===== */
+.btn{position:relative;display:inline-flex;align-items:center;gap:16px;height:56px;padding:0 8px 0 24px;border-radius:999px;font:600 16px/24px var(--f-ui);letter-spacing:-.01em;white-space:nowrap;cursor:pointer;border:0;transition:transform .4s var(--ease),background .3s,box-shadow .3s}
+.btn .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;transition:transform .4s var(--ease)}
+.btn .ic svg{width:20px;height:20px}
+.btn:hover .ic{transform:translateX(4px) rotate(-45deg)}
+.btn:active{transform:scale(.97)}
+.btn-p{background:var(--brand);color:var(--on-brand);box-shadow:0 8px 32px var(--brand-glow),inset 0 1px 0 #ffffff3d}
+.btn-p .ic{background:var(--on-brand);color:var(--brand-strong)}
+.btn-p:hover{background:var(--brand-strong)}
+.btn-g{background:#ffffff14;color:var(--text);box-shadow:inset 0 0 0 1px var(--line-2);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.btn-g .ic{background:#ffffff1f}
+.btn-g:hover{background:#ffffff1f}
+.btn-s{height:44px;padding:0 4px 0 20px;gap:12px;font-size:14px;line-height:20px}
+.btn-s .ic{width:36px;height:36px} .btn-s .ic svg{width:16px;height:16px}
+.btn-xl{height:72px;padding:0 8px 0 12px;gap:16px;font-size:18px;line-height:24px}
+.btn-xl .ic{width:56px;height:56px} .btn-xl .ic svg{width:24px;height:24px}
+.btn-xl .lg{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.btn-xl .lg img{width:32px;height:32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.center .btns{justify-content:center}
+
+/* ===== Nav flutuante ===== */
+.prog{position:fixed;inset:0 0 auto 0;height:2px;z-index:60;pointer-events:none}
+.prog i{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--brand-soft),var(--brand))}
+.nav{position:fixed;top:16px;left:16px;right:16px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--wrap);margin:0 auto;height:64px;padding:8px 8px 8px 20px;border-radius:999px;background:#111113a3;backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);box-shadow:inset 0 0 0 1px var(--line),0 8px 32px #0000003d;transition:transform .8s var(--ease),background .4s,box-shadow .4s,color .4s}
+.js .nav{transform:translateY(-96px)}
+.js.ready .nav{transform:none}
+.nav-brand{display:flex;align-items:center;gap:8px;font:600 16px/24px var(--f-disp);letter-spacing:-.01em}
+.nav-brand .wm{height:24px;width:132px}
+.nav.lt{--sirius-sub:#5f606a}
+.foot-brand{flex-direction:column;align-items:flex-start;gap:8px}
+.foot-brand .wm{height:28px;width:156px}
+.nav-brand .x{color:var(--subtle);font-weight:400}
+.nav-brand .pl{width:24px;height:24px}
+.nav-brand .pn{color:var(--muted);font-size:14px;font-weight:500}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:8px 16px;border-radius:999px;font:500 14px/20px var(--f-ui);color:var(--muted);transition:color .3s,background .3s}
+.nav-links a sup{margin-left:2px;font-size:10px;line-height:10px;color:var(--muted);opacity:.6;font-variant-numeric:tabular-nums}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.on{color:var(--text);background:#ffffff14}
+.nav-links a.on sup{color:var(--brand-soft);opacity:1}
+.nav.lt{background:#ffffffb8;color:var(--l-text);box-shadow:inset 0 0 0 1px #0000001a,0 8px 32px #0000001a}
+.nav.lt .pn,.nav.lt .nav-links a{color:var(--l-muted)}
+.nav.lt .nav-links a:hover,.nav.lt .nav-links a.on{color:var(--l-text)}
+.nav.lt .nav-links a.on{background:#0000000f}
+.nav.lt .nav-links a sup{color:var(--l-muted)}
+.nav.lt .nav-links a.on sup{color:var(--ink);opacity:1}
+
+/* ===== Modo apresentação (desktop) ===== */
+.keys{position:fixed;right:24px;bottom:24px;z-index:40;display:none;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;background:#111113cc;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:inset 0 0 0 1px var(--line-2),0 8px 32px #0000004d;font:500 14px/20px var(--f-ui);color:var(--muted);opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease);pointer-events:none}
+.keys kbd{display:grid;place-items:center;min-width:24px;height:24px;padding:0 4px;border-radius:6px;background:#ffffff1f;font:600 12px/16px var(--f-ui);color:var(--text)}
+.keys.show{opacity:1;transform:none}
+@media (min-width:1024px) and (pointer:fine){.keys{display:flex}}
+
+/* ===== Reveal ===== */
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease);transition-delay:var(--d,0s)}
+.js .rv{opacity:0;transform:translateY(32px);filter:blur(8px)}
+.js .rv.in{opacity:1;transform:none;filter:none}
+
+/* ===== 00 · Hero (imagem 100%, parallax, a folha seguinte sobe por cima) ===== */
+.intro{position:relative}
+.hero{position:sticky;top:0;z-index:0;height:100vh;height:100svh;min-height:640px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:var(--bg)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--hero-pos);transform-origin:var(--hero-pos);transform:scale(1.04);will-change:transform}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0a0a0bf0 0%,#0a0a0bc7 28%,#0a0a0b33 56%,#0a0a0b00 72%),linear-gradient(180deg,#0a0a0b80 0%,#0a0a0b00 24%,#0a0a0b00 70%,#0a0a0bcc 100%)}
+.hero-in{position:relative;will-change:transform,opacity}
+.hero-copy{max-width:560px;display:flex;flex-direction:column;align-items:flex-start;gap:32px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px 0 8px;border-radius:999px;background:#ffffff14;box-shadow:inset 0 0 0 1px var(--line-2);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);font:500 14px/20px var(--f-ui);color:var(--muted)}
+.chip img{width:24px;height:24px}
+.chip b{color:var(--text);font-weight:600}
+.hero-h{font-size:80px;align-self:stretch}
+.hero-copy .p-l{color:#eeeef0d9;max-width:480px}
+.hero-foot{position:absolute;left:0;right:0;bottom:80px}
+.hero-foot .wrap{display:flex;align-items:center;gap:8px;font:500 12px/16px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hero-foot svg{width:16px;height:16px;animation:bob 2s var(--ease) infinite}
+@keyframes bob{50%{transform:translateY(4px)}}
+.js .hero .ld{opacity:0;transform:translateY(32px);filter:blur(12px)}
+.hero .ld{transition:opacity 1.2s var(--ease),transform 1.2s var(--ease),filter 1.2s var(--ease);transition-delay:var(--d,0s)}
+.js.ready .hero .ld{opacity:1;transform:none;filter:none}
+.sheet{margin-top:-48px;box-shadow:0 -24px 80px #00000066}
+
+/* ===== 01 · A oportunidade (claro) ===== */
+.words .w{transition:color .4s}
+.js .words .w{color:#3a3a40} .js .words .w.on{color:var(--text)} .words .w.hl.on{color:var(--brand-soft)}
+.js .light .words .w{color:var(--l-dim)} .js .light .words .w.on{color:var(--l-text)}
+.js .light .words .w.hl.on{color:var(--ink)}
+.intro-txt{max-width:960px}
+.intro-txt .lead{max-width:640px;margin-top:32px}
+.marq{position:relative;margin:64px 0;padding:48px 0;overflow:hidden;white-space:nowrap}
+.marq-t{display:inline-flex;align-items:center;gap:48px;will-change:transform}
+.marq .ttl{display:inline-block;font-size:112px}
+.marq .star{width:56px;height:56px;flex:none;color:var(--ink)}
+.flow{display:grid;grid-template-columns:1fr 64px 1fr 64px 1fr;align-items:stretch}
+.flow-h{margin-bottom:24px}
+.fc{position:relative;display:flex;flex-direction:column;gap:12px;min-height:240px;padding:32px;border-radius:28px;background:var(--l-card);box-shadow:0 1px 0 #0000000a,0 16px 48px #0000000f;border:1px solid var(--l-line)}
+.fc .h3{margin-top:auto}
+.fc.hl{background:var(--hl-bg);color:var(--hl-on);border-color:transparent;box-shadow:0 24px 64px var(--ink-a16)}
+.fc.hl .lbl,.fc.hl .mut{color:inherit;opacity:.8}
+.fa{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--l-muted)}
+.fa svg{width:24px;height:24px}
+.fa small{font:600 10px/12px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg)}
+.v-end{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:end;margin-top:144px}
+.v-end>*{min-width:0}
+
+/* ===== 02 · Seu app ===== */
+.flow.dark{margin-top:80px}
+.flow.dark .fc{background:var(--s1);border:1px solid var(--line);box-shadow:inset 0 1px 0 var(--line)}
+.flow.dark .fa{color:var(--brand-soft)}
+.fc .lg{width:56px;height:56px;border-radius:16px;background:#fff;display:grid;place-items:center}
+.fc .lg img{width:40px;height:40px}
+.flow.dark .fc.app{background:linear-gradient(180deg,var(--brand-deep),var(--s1));border-color:var(--brand-glow);box-shadow:0 24px 80px var(--brand-glow),inset 0 1px 0 #ffffff29}
+.flow.dark .fc.money{background:var(--brand);border-color:transparent;color:var(--on-brand)}
+.fc.money .lbl{color:inherit;opacity:.7}
+.fc .big{font:700 48px/56px var(--f-disp);letter-spacing:-.04em;margin-top:auto}
+.res{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-top:144px}
+.res>*{min-width:0}
+.res-l{position:sticky;top:128px;align-self:start}
+.ri{display:grid;grid-template-columns:40px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.ri:last-child{border-bottom:1px solid var(--line)}
+.ri .ck{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#ffffff0f;color:var(--subtle);transition:background .6s var(--ease),color .6s,transform .6s var(--ease);transition-delay:var(--d,0s)}
+.ri .ck svg{width:20px;height:20px}
+.ri.in .ck{background:var(--brand);color:var(--on-brand)}
+.ri .h4{margin-bottom:4px}
+.res-foot{margin-top:32px;font:500 16px/24px var(--f-ui);color:var(--muted)}
+.res-foot b{color:var(--text);font-weight:600}
+
+/* ===== 03 · O salão (claro, diagrama estilo keynote) ===== */
+.sal{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:center}
+.sal>*{min-width:0}
+.sal .lead{margin-top:24px}
+.hall{position:relative;width:100%;max-width:720px;margin:0 0 0 auto}
+.hall-in{position:absolute;left:0;top:0;width:720px;height:528px;transform-origin:0 0}
+.hall-lines{position:absolute;left:0;top:0;width:720px;height:528px;overflow:visible}
+.hall-lines .base{fill:none;stroke:#0000001f;stroke-width:2}
+.hall-lines .pulse{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-dasharray:8 100;animation:pulse 1.8s linear infinite}
+.hall-lines .pulse.b{animation-delay:.6s} .hall-lines .pulse.c{animation-delay:1.2s}
+@keyframes pulse{from{stroke-dashoffset:108}to{stroke-dashoffset:0}}
+.appi{position:absolute;top:0;width:200px;margin-left:-100px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.appi .sq{width:96px;height:96px;border-radius:24px;display:grid;place-items:center;background:#fff;box-shadow:inset 0 0 0 1px #0000000f,0 16px 40px #0000001f}
+.appi .sq img{width:56px;height:48px;object-fit:contain}
+.appi.me .sq{box-shadow:inset 0 0 0 1px #0000000f,0 0 0 4px var(--ink-a16),0 16px 40px var(--ink-a16)}
+.appi b{font:600 16px/20px var(--f-disp)}
+.appi .pill{height:24px;padding:0 10px;font-size:12px;line-height:16px}
+/* logos em cinza escuro: coloridos (a), brancos (i), preto e branco (g) */
+.mono-a{filter:grayscale(1) brightness(.32)} .mono-i{filter:invert(.78)} .mono-b{filter:var(--logo-mono)}
+.onlight{filter:var(--logo-onlight)}
+.tbl{position:absolute;left:80px;top:240px;width:560px;height:256px;border-radius:32px;background:#fff;box-shadow:inset 0 0 0 1px #0000000f,0 24px 64px #0000001f}
+.felt{position:absolute;left:14.3%;top:18.75%;width:71.4%;height:62.5%;border-radius:999px;background:radial-gradient(70% 90% at 50% 40%,var(--felt-1),var(--felt-2));box-shadow:inset 0 0 0 6px var(--felt-edge),inset 0 0 0 8px #ffffff1f,0 16px 32px #0000004d;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff}
+.felt img{width:48px;height:48px}
+.felt b{font:600 16px/20px var(--f-disp)}
+.felt small{font:500 12px/16px var(--f-ui);color:#ffffffb2}
+.seat{position:absolute;width:56px;height:56px;margin:-28px 0 0 -28px}
+.seat>img{width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 3px #fff,0 8px 20px #00000033}
+.seat .bd{position:absolute;right:-6px;bottom:-6px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:#fff;box-shadow:0 0 0 2px #fff,0 2px 8px #00000033}
+.seat .bd img{width:16px;height:16px;object-fit:contain}
+.seat .bd.me{box-shadow:0 0 0 2px var(--ink)}
+.hall-cap{position:absolute;left:80px;top:508px;width:560px;text-align:center;font:500 14px/20px var(--f-ui);color:var(--l-muted)}
+.notes{display:grid;grid-template-columns:1fr;gap:12px;margin-top:40px}
+.note{display:flex;gap:16px;align-items:flex-start;padding:24px;border-radius:24px;background:var(--l-card);border:1px solid var(--l-line)}
+.note img{width:48px;height:48px;flex:none}
+.note b{display:block;font:600 18px/24px var(--f-disp);margin-bottom:4px}
+
+/* ===== 04 · A prova (telas rolando sozinhas para o lado) ===== */
+.prova{overflow:hidden;padding:72px 0}
+.stick{position:relative}
+.stick::before{content:"";position:absolute;left:50%;top:50%;width:1200px;height:640px;margin:-200px 0 0 -600px;border-radius:50%;background:radial-gradient(closest-side,var(--brand-glow),transparent);filter:blur(24px);pointer-events:none}
+.prova-head{position:relative;text-align:center}
+.prova-head .kick{justify-content:center;margin-bottom:24px}
+.prova-head .lead{margin-top:16px}
+.track{position:relative;height:calc(var(--ph,600px) * 1.16);margin-top:24px}
+.prova .btns{position:relative;justify-content:center;margin-top:16px}
+.tph{position:absolute;left:50%;top:calc(var(--ph,520px) * .06);width:var(--pw,240px);height:var(--ph,520px);padding:8px;border-radius:44px;background:#000;box-shadow:inset 0 0 0 1px #ffffff26,0 40px 96px #000000b3;will-change:transform,opacity;transition:box-shadow .6s}
+.tph.on{box-shadow:inset 0 0 0 1px #ffffff3d,0 48px 120px #000000cc,0 0 0 1px var(--brand-glow),0 0 96px var(--brand-glow)}
+.tph img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:36px}
+
+/* ===== 05 · O app ===== */
+.games{position:relative;height:440px;margin:48px 0 80px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.gc{position:absolute;left:50%;top:40px;width:184px;height:256px;margin-left:-92px;padding:24px 16px 20px;border-radius:32px;display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--s1);box-shadow:inset 0 1px 0 #ffffff29,inset 0 0 0 1px var(--line),0 24px 48px #00000080;will-change:transform}
+.gc::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,var(--c) 0%,transparent 72%);opacity:.5;pointer-events:none}
+.gc>*{position:relative}
+.gc img{width:96px;height:96px;margin-bottom:auto}
+.gc .ttl{font-size:24px;margin-bottom:8px;align-self:stretch}
+.gc .ol svg{margin-inline:auto}
+.gc .p-s{color:var(--muted)}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.bx{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:400px;padding:32px;border-radius:28px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 0 var(--line-2)}
+.bx.has-shot{height:480px;min-height:0}
+.bx .h3{margin-bottom:8px}
+.bx .p-m{color:var(--muted);max-width:360px}
+.bx .shot{display:block;width:240px;margin:32px auto 0;border-radius:32px;border:6px solid #000;box-shadow:0 0 0 1px #ffffff26,0 24px 64px #000000b3;transition:transform 1s var(--ease)}
+.bx:hover .shot{transform:translateY(-16px)}
+.c4{grid-column:span 4} .c3{grid-column:span 3} .c6{grid-column:span 6}
+.bx .art{position:absolute;left:32px;right:32px;bottom:32px;border-radius:20px;height:176px;object-fit:cover}
+.bx.wide img{width:100%;height:208px;margin-top:auto;object-fit:cover;object-position:top;border-radius:16px;box-shadow:0 0 0 1px #ffffff1f,0 24px 64px #00000099}
+.pill{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;border-radius:999px;background:#ffffff14;box-shadow:inset 0 0 0 1px var(--line);font:500 12px/16px var(--f-ui);color:var(--muted)}
+.pill.br{background:var(--brand-a16);color:var(--brand-soft);box-shadow:inset 0 0 0 1px var(--brand-glow)}
+.light .pill{background:var(--l-card);color:var(--l-muted);box-shadow:inset 0 0 0 1px var(--l-line)}
+.light .pill.br{background:var(--ink-a12);color:var(--ink);box-shadow:none}
+.amt{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.amt .row{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-radius:16px;background:var(--s2);box-shadow:inset 0 0 0 1px var(--line);font:500 14px/20px var(--f-ui)}
+.amt .row b{font-weight:600;font-variant-numeric:tabular-nums}
+.amt .row .ok{color:#52de7e}
+
+/* ===== 06 · Feito pra voltar (claro) ===== */
+.rows{margin-top:80px;border-bottom:1px solid var(--l-line)}
+.rw{display:grid;grid-template-columns:200px 5fr 6fr;gap:32px;align-items:center;padding:32px 0;border-top:1px solid var(--l-line)}
+.rw .ttl{font-size:56px;color:var(--l-dim);transition:color .6s}
+.rw:hover .ttl,.rw.in .ttl{color:var(--ink)}
+.rw .p-l{color:var(--l-muted)}
+
+/* ===== 07 · É seu ===== */
+.seu-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:80px}
+.sc{display:flex;flex-direction:column;gap:8px;min-height:288px;padding:32px;border-radius:28px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line)}
+.sc img{width:80px;height:80px;margin-bottom:auto}
+.sc .p-m{color:var(--muted)}
+
+/* ===== 08 · Personagens (claro, cards com o personagem saindo do quadro) ===== */
+.coll{display:flex;justify-content:center;align-items:flex-end;gap:24px;margin-top:176px;padding:0 16px}
+.cc{--r:0deg;--y:0px;position:relative;flex:none;width:200px;height:280px;border-radius:28px;background:linear-gradient(165deg,var(--c1),var(--c2));box-shadow:0 24px 56px #0000002e,inset 0 1px 0 #ffffff66;transform:translateY(var(--y)) rotate(var(--r));transition:transform 1.2s var(--ease),opacity .8s;transition-delay:var(--d,0s)}
+.js .coll .cc{transform:translateY(calc(var(--y) + 80px)) rotate(var(--r));opacity:0}
+.js .coll.in .cc{transform:translateY(var(--y)) rotate(var(--r));opacity:1}
+.js .coll.in .cc:hover,.cc:hover{transform:translateY(calc(var(--y) - 16px)) rotate(0deg);transition-delay:0s;z-index:2}
+.cc::before{content:"";position:absolute;inset:8px;border-radius:20px;box-shadow:inset 0 0 0 1px #ffffff52;pointer-events:none}
+.cc .fig{position:absolute;left:50%;bottom:0;width:var(--fw,100%);transform:translateX(-50%);clip-path:inset(-80% -40% 0 -40% round 0 0 28px 28px);transition:transform .8s var(--ease)}
+.cc:hover .fig{transform:translateX(-50%) scale(1.04)}
+.cc .fig img{width:100%}
+.cc .pk{position:absolute;left:20px;top:20px;font:600 12px/16px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:#ffffffd9}
+.cc .meta{position:absolute;left:12px;right:12px;bottom:12px;padding:12px 16px;border-radius:16px;background:#111113b3;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff}
+.cc .meta b{display:block;font:600 16px/20px var(--f-disp)}
+.cc .meta small{display:block;font:500 12px/16px var(--f-ui);color:#ffffffb2}
+.cc .shine{position:absolute;inset:0;border-radius:28px;background:linear-gradient(115deg,transparent 35%,#ffffff40 48%,transparent 60%);background-size:250% 100%;background-position:120% 0;transition:background-position 1s var(--ease);pointer-events:none}
+.cc:hover .shine{background-position:-20% 0}
+.cc.main{width:248px;height:340px}
+.cc.main .meta,.cc.own .meta{background:var(--deep-a80)}
+.tri-h{display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:end;margin-top:176px}
+.tri-h>*{min-width:0}
+.tri{display:grid;grid-template-columns:1fr 48px 1fr 48px 1fr;align-items:center;margin-top:56px}
+.tc{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:var(--s1);box-shadow:0 24px 56px #0000001f}
+.tc img,.tc video{width:100%;height:100%;object-fit:cover}
+.tc.logo{display:grid;place-items:center;background:radial-gradient(80% 70% at 50% 40%,var(--stage-1,var(--brand)),var(--stage-2,var(--brand-deep)))}
+.tc.logo img{width:56%;height:auto;object-fit:contain;filter:drop-shadow(0 24px 40px #00000059)}
+.tc .tag{position:absolute;left:16px;bottom:16px;right:16px;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:#111113b3;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);color:#fff}
+.tc .tag b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--brand);color:var(--on-brand);font:600 12px/16px var(--f-ui)}
+.tc .tag span{font:600 16px/24px var(--f-disp)}
+.ta{display:grid;place-items:center;color:var(--ink)}
+.ta svg{width:24px;height:24px}
+
+/* ===== 09 · O motor ===== */
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:80px}
+.pc{display:flex;flex-direction:column;padding:40px;border-radius:32px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 0 var(--line-2)}
+.pc .tile{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(180deg,var(--brand),var(--brand-strong));box-shadow:inset 0 1px 0 #ffffff52,0 12px 32px var(--brand-glow);margin-bottom:40px}
+.pc .tile img{width:48px;height:48px}
+.pc .ttl{font-size:32px;margin-bottom:12px}
+.pc ul{list-style:none;margin-top:32px;border-top:1px solid var(--line)}
+.pc li{display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font:500 16px/24px var(--f-ui)}
+.pc li svg{flex:none;width:20px;height:20px;color:var(--brand-soft)}
+.take{display:grid;grid-template-columns:5fr 7fr;gap:64px;margin-top:176px}
+.take-l{position:sticky;top:128px;align-self:start}
+.tk{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:28px 24px;margin:0 -24px;border-radius:24px;border-bottom:1px solid var(--line);transition:background .4s}
+.tk:first-child{border-top:1px solid var(--line)}
+.tk:hover{background:var(--s1)}
+.tk .h3{margin-bottom:4px}
+.tk .p-m{color:var(--muted)}
+.tk .ic{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#ffffff14;transition:transform .4s var(--ease),background .4s}
+.tk .ic svg{width:20px;height:20px}
+.tk:hover .ic{transform:rotate(-45deg);background:var(--brand);color:var(--on-brand)}
+.tk.top .ic{background:var(--brand);color:var(--on-brand)}
+
+/* ===== 10 · Os números (claro, cards de plano) ===== */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:80px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;padding:40px;border-radius:32px;background:var(--l-card);border:1px solid var(--l-line);box-shadow:0 1px 0 #0000000a,0 24px 64px #0000000f}
+.plan.feat{border-color:transparent;box-shadow:inset 0 0 0 2px var(--ink),0 24px 64px var(--ink-a16)}
+.plan .badge{position:absolute;top:-14px;left:40px;height:28px;padding:0 12px;border-radius:999px;background:var(--hl-bg);color:var(--hl-on);font:600 12px/28px var(--f-ui)}
+.plan .price{margin-top:16px;font:600 56px/64px var(--f-disp);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.plan.feat .price{color:var(--ink)}
+.plan .per{font:400 16px/24px var(--f-ui);color:var(--l-muted)}
+.plan ul{list-style:none;margin-top:32px;border-top:1px solid var(--l-line)}
+.plan li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--l-line);font:500 16px/24px var(--f-ui)}
+.plan li span{display:flex;align-items:center;gap:12px}
+.plan li svg{flex:none;width:20px;height:20px;color:var(--ink)}
+.plan li b{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.plan li:last-child{border-bottom:0}
+.plan .fine{margin-top:auto;padding-top:24px;font:400 12px/16px var(--f-ui);color:var(--l-muted)}
+.split-bar{display:flex;gap:4px;height:8px;margin-top:24px}
+.split-bar i{border-radius:4px;background:var(--ink)}
+.split-bar i:nth-child(2){opacity:.6} .split-bar i:nth-child(3){opacity:.4} .split-bar i:nth-child(4){opacity:.24}
+.rake{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-top:48px}
+.rake .lbl{margin-right:8px}
+.rake .pill{height:36px;padding:0 16px;font-size:14px;line-height:20px}
+.rake .pill b{font-weight:600;color:var(--l-text)}
+
+/* ===== 11 · A conta ===== */
+.calc{display:grid;grid-template-columns:5fr 7fr;gap:16px;margin-top:56px}
+.cbox{padding:32px 40px;border-radius:32px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 0 var(--line-2)}
+.ctl{display:flex;flex-direction:column;gap:28px}
+.ctl label{display:flex;flex-direction:column;gap:16px}
+.ctl .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font:500 16px/24px var(--f-ui);color:var(--muted)}
+.ctl .top output{font:600 20px/28px var(--f-disp);color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;outline:none;background:linear-gradient(90deg,var(--brand) var(--p,50%),#ffffff1f var(--p,50%));cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;box-shadow:0 2px 8px #00000066,0 0 0 1px #0000001a;transition:transform .2s}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.12)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radius:50%;background:#fff;box-shadow:0 2px 8px #00000066}
+.fix{display:flex;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid var(--line);font:400 14px/20px var(--f-ui);color:var(--muted)}
+.fix b{color:var(--text);font-weight:600}
+.cres{display:flex;flex-direction:column;background:radial-gradient(80% 60% at 80% 0%,var(--brand-a20),transparent 70%),var(--s1)}
+.big-n{font:700 80px/88px var(--f-disp);letter-spacing:-.05em;font-variant-numeric:tabular-nums;margin:12px 0 4px}
+.mths{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:24px}
+.mths div{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:16px;background:var(--s2);box-shadow:inset 0 0 0 1px var(--line)}
+.mths b{font:600 20px/28px var(--f-disp);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.mths span{font:400 12px/16px var(--f-ui);color:var(--muted)}
+.chart{display:flex;align-items:flex-end;gap:4px;height:128px;margin-top:32px}
+.chart i{flex:1;height:0;border-radius:4px 4px 2px 2px;background:linear-gradient(180deg,var(--brand-soft),var(--brand-strong));transition:height .8s var(--ease);transition-delay:var(--d,0s)}
+.chart i.neg{background:var(--s4)}
+.axis{display:flex;justify-content:space-between;margin-top:8px;font:500 12px/16px var(--f-ui);color:var(--subtle)}
+.brk{margin-top:24px;border-top:1px solid var(--line)}
+.brk div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font:400 14px/20px var(--f-ui);color:var(--muted);font-variant-numeric:tabular-nums}
+.brk div b{color:var(--text);font-weight:600}
+.brk div.tot{color:var(--text);font-weight:600;border-bottom:0}
+.brk div.tot b{color:var(--brand-soft);font-size:16px;line-height:20px}
+.disc{margin-top:24px;font:400 12px/16px var(--f-ui);color:var(--subtle)}
+
+/* ===== 12 · Por que ===== */
+.why{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:184px;gap:16px;margin-top:56px}
+.wy{display:flex;flex-direction:column;padding:24px;border-radius:28px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line)}
+.wy img{width:40px;height:40px;margin-bottom:auto}
+.wy .h4{margin-bottom:4px}
+.wy .p-s{color:var(--muted)}
+.wy.big{grid-column:span 2;grid-row:span 2;justify-content:space-between;background:radial-gradient(100% 80% at 100% 0%,var(--brand-a30),transparent 70%),var(--s1);box-shadow:inset 0 0 0 1px var(--brand-glow)}
+.wy.big .ttl{font-size:120px}
+.wy.big .ttl .ol:last-child{color:var(--brand-soft)}
+.wy .bn{font:700 48px/56px var(--f-disp);letter-spacing:-.04em;margin-bottom:auto}
+.why-foot{margin-top:32px;font:500 16px/24px var(--f-ui);color:var(--muted)}
+
+/* ===== 13 · 1 semana (claro) ===== */
+.tl{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:80px;padding-top:56px}
+.tl-track{position:absolute;left:0;right:0;top:11px;height:2px;background:var(--l-line);border-radius:1px}
+.tl-fill{position:absolute;left:0;top:11px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--ink);border-radius:1px}
+.tl-s{position:relative}
+.tl-s::before{content:"";position:absolute;left:0;top:-56px;width:24px;height:24px;border-radius:50%;background:var(--l-bg);box-shadow:inset 0 0 0 2px var(--l-dim);transition:background .4s,box-shadow .4s}
+.tl-s.on::before{background:var(--ink);box-shadow:inset 0 0 0 2px var(--ink),0 0 0 6px var(--ink-a16)}
+.tl-s .ttl{font-size:40px;color:var(--l-dim);margin-bottom:24px;transition:color .4s}
+.tl-s.on .ttl{color:var(--l-text)}
+.tl-s .h3{margin-bottom:8px}
+.tl-s .p-m{color:var(--l-muted)}
+
+/* ===== Final ===== */
+.fim{padding-top:176px;overflow:hidden}
+.fim::before{content:"";position:absolute;left:50%;top:0;width:1440px;height:960px;margin-left:-720px;background:radial-gradient(closest-side,var(--brand-a24),transparent);pointer-events:none}
+.fim .st{margin-top:24px;color:var(--muted)}
+.fim .btns{margin-top:56px}
+.ptn{display:flex;justify-content:center;align-items:center;gap:40px;margin-top:128px}
+.ptn .lbl{color:var(--subtle)}
+.ptn img{height:28px;width:auto}
+.ptn .kp{display:flex;align-items:center;gap:8px;font:600 16px/24px var(--f-disp);opacity:.72}
+.foot{margin-top:128px;padding-bottom:32px;text-align:left}
+.foot-top{display:flex;justify-content:space-between;align-items:center;gap:32px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+.foot-top .nav-brand .s{display:block;font:500 12px/16px var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--subtle)}
+.giant{display:block;width:100%;height:auto;margin-top:48px;color:#fff;--sirius-sub:#fff;opacity:.08}
+.legal{display:flex;justify-content:space-between;gap:32px;margin-top:32px;font:400 12px/16px var(--f-ui);color:var(--subtle)}
+.legal p{max-width:720px}
+
+/* ===== EstrelaGames: marca no menu e no rodapé ===== */
+.nav-brand .eg{width:28px;height:28px}
+.egw{font:700 18px/24px var(--f-disp);letter-spacing:-.02em;color:var(--text)}
+.egw b{font-weight:700;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav.lt .egw{color:var(--l-text)}
+.nav.lt .egw b{background-image:linear-gradient(90deg,#f0a000,#e05a00)}
+.foot-brand .fb{display:flex;align-items:center;gap:12px}
+.foot-brand .eg{width:32px;height:32px}
+.foot-brand .egw{font-size:24px;line-height:32px}
+.fim .btns{gap:12px}
+
+/* ===== Tabela de taxas (dobra clara) ===== */
+.tx-h{margin-top:96px}
+.tx-top{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.tx-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:16px}
+.tx-top>*,.tx-row>*{min-width:0}
+.tg{display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:24px;background:var(--l-card);border:1px solid var(--l-line);box-shadow:0 1px 0 #0000000a,0 16px 40px #0000000a}
+.tg-h{display:flex;align-items:center;gap:12px}
+.tg-h img{width:40px;height:40px;flex:none;object-fit:contain}
+.tg-h b{font:600 18px/24px var(--f-disp);letter-spacing:-.01em}
+.tg .meta{font:400 14px/20px var(--f-ui);color:var(--l-muted)}
+.tg .rt{margin-top:auto;font:600 40px/48px var(--f-disp);letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+.tg table{width:100%;margin-top:auto;border-collapse:collapse;font:500 14px/20px var(--f-ui);font-variant-numeric:tabular-nums}
+.tg th{padding:0 0 8px;font:500 12px/16px var(--f-ui);color:var(--l-muted);text-align:right}
+.tg th:first-child,.tg td:first-child{text-align:left}
+.tg td{padding:12px 0;border-top:1px solid var(--l-line);text-align:right;color:var(--l-muted)}
+.tg td b{font:600 24px/28px var(--f-disp);letter-spacing:-.02em;color:var(--ink)}
+@media (max-width:1024px){ .tx-top{grid-template-columns:1fr} .tx-row{grid-template-columns:1fr 1fr} }
+
+/* ===== Responsivo ===== */
+@media (max-width:1280px){
+  :root{--sec:112px}
+  .st{font-size:44px;line-height:52px}
+  .hero-h{font-size:72px}
+   .cc{width:176px;height:248px} .cc.main{width:216px;height:300px}
+}
+@media (max-width:1024px){
+  :root{--sec:112px;--gut:24px}
+  .nav-links{display:none}
+  .st{font-size:36px;line-height:44px}
+  .ttl.l{font-size:48px} .ttl.xl{font-size:64px}
+  .hero-h{font-size:56px}
+  .head,.v-end,.res,.tri-h,.take,.calc,.sal{grid-template-columns:1fr;gap:32px}
+  .hall{margin:24px auto 0}
+  .res-l,.take-l{position:static}
+  .flow,.tri{grid-template-columns:1fr;gap:12px}
+  .fa,.ta{transform:rotate(90deg);height:48px}
+  .fa small{display:none}
+  .coll{flex-wrap:wrap;gap:16px;row-gap:96px}
+  .bento .bx{grid-column:span 12}
+  .seu-cards,.why,.prods,.plans{grid-template-columns:1fr 1fr}
+  .wy.big{grid-column:span 2;grid-row:span 1}
+  .rw{grid-template-columns:120px 1fr;gap:16px}
+  .rw .p-l{grid-column:2}
+  .tl{grid-template-columns:1fr 1fr;row-gap:64px}
+}
+@media (max-width:640px){
+  :root{--sec:88px;--gut:16px}
+  .light{margin:0;border-radius:32px}
+  /* entradas mais leves no celular: sem desfoque, deslocamento curto */
+  .js .rv{filter:none;transform:translateY(16px)}
+  .js .hero .ld{filter:none;transform:translateY(16px)}
+  /* header de ponta a ponta */
+  .nav{top:0;left:0;right:0;max-width:none;height:64px;border-radius:0;padding:8px 12px 8px 16px;box-shadow:0 1px 0 var(--line)}
+  .nav.lt{box-shadow:0 1px 0 #0000001a}
+  .nav-brand .pn,.nav-brand .x,.nav-brand .pl{display:none}
+  .st{font-size:28px;line-height:36px}
+  .ttl.l{font-size:36px} .ttl.m{font-size:32px} .ttl.xl{font-size:44px}
+  .hero-h{font-size:44px}
+  .lead,.p-l{font-size:18px;line-height:28px}
+  /* hero: personagem em cima, texto embaixo */
+  .hero{position:relative;height:auto;min-height:0;display:block;padding:0 0 112px}
+  .hero-img{position:relative;height:56vh;height:56svh;min-height:360px;object-position:var(--hero-pos-m);transform:none}
+  .hero-shade{bottom:auto;height:56vh;height:56svh;min-height:360px;background:linear-gradient(180deg,#0a0a0b99 0%,#0a0a0b00 24%,#0a0a0b00 60%,#0a0a0b 100%)}
+  .hero-in{margin-top:-24px}
+  .hero-copy{gap:24px}
+  .hero-foot{position:static;margin-top:40px}
+  /* salão em grade */
+  .hall{margin-top:48px}
+  .hall-in{position:relative;width:auto;height:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px 8px}
+  .hall-lines{display:none}
+  .appi{position:static;width:auto;margin:0;gap:8px}
+  .appi .sq{width:64px;height:64px;border-radius:16px}
+  .appi .sq img{width:36px;height:32px}
+  .appi b{font-size:12px;line-height:16px}
+  .appi .pill{height:20px;padding:0 8px;font-size:10px;line-height:12px}
+  .tbl{position:relative;left:auto;top:auto;grid-column:1/-1;width:100%;height:208px;border-radius:24px}
+  .felt img{width:32px;height:32px} .felt b{font-size:14px;line-height:20px}
+  .seat{width:44px;height:44px;margin:-22px 0 0 -22px}
+  .hall-cap{position:static;grid-column:1/-1;width:auto}
+  .notes{margin-top:40px}
+  /* jogos em faixa */
+  .games{height:320px;margin:32px 0 56px}
+  .gc{top:24px}
+  /* personagens com scroll lateral */
+  .coll{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:16px;padding:136px 24px 32px;gap:16px;scrollbar-width:none}
+  .coll::-webkit-scrollbar{display:none}
+  .tk{margin:0;padding:24px 0}
+  .tri-h{margin-top:96px}
+  .wy.big .ttl{font-size:72px}
+  .cc{scroll-snap-align:center}
+  .marq .ttl{font-size:64px} .marq .star{width:32px;height:32px}
+  .seu-cards,.why,.prods,.plans,.mths{grid-template-columns:1fr}
+  .wy.big{grid-column:span 1}
+  .tl{grid-template-columns:1fr}
+  .big-n{font-size:56px;line-height:64px}
+  .ptn{flex-wrap:wrap;gap:24px}
+  .legal{flex-direction:column}
+  .btn-xl{height:64px;font-size:16px;line-height:24px} .btn-xl .ic{width:48px;height:48px}
+}
+/* modo revisão */
+.all .hero{position:relative;height:900px}
+.all .nav{position:absolute}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ícones -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 32 32"><path d="M16 3c1.5 7.2 5.8 11.5 13 13-7.2 1.5-11.5 5.8-13 13-1.5-7.2-5.8-11.5-13-13 7.2-1.5 11.5-5.8 13-13z" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="prog"><i id="prog"></i></div>
+<div class="keys" id="keys" aria-hidden="true">Apresentando? Use <kbd>←</kbd><kbd>→</kbd> para passar as dobras</div>
+
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#topo" aria-label="EstrelaGames · Programa de afiliados">
+    <img class="eg" src="assets/eg/logo.svg" alt="">
+    <span class="egw">Estrela<b>Games</b></span>
+    <span class="x">·</span>
+    <span class="pn">Afiliados</span>
+  </a>
+  <nav class="nav-links" aria-label="Seções">
+    <a href="#oportunidade">A oportunidade<sup>01</sup></a>
+    <a href="#ganho">Seu ganho<sup>02</sup></a>
+    <a href="#prova">O produto<sup>04</sup></a>
+    <a href="#numeros">Números<sup>08</sup></a>
+    <a href="#conta">A conta<sup>09</sup></a>
+  </nav>
+  <a class="btn btn-p btn-s" href="#fim">Quero ser afiliado<span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+</header>
+
+<main>
+<div class="intro">
+
+<!-- 00 · HERO (imagem provisória: troque assets/eg/hero.webp, 2880 × 1222) -->
+<section class="hero" id="topo">
+  <img class="hero-img" id="heroImg" src="assets/eg/hero.webp" alt="" aria-hidden="true">
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-in" id="heroIn">
+    <div class="hero-copy">
+      <span class="chip ld" style="--d:.2s"><img src="assets/eg/logo.svg" alt=""><b>EstrelaGames</b>· Programa de afiliados</span>
+      <h1 class="ttl hero-h ld" style="--d:.35s"><span class="ol" data-w="Black" data-em="7.5140"><svg viewBox="70 -700 7514 700" style="--em:7.5140" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM2187 0H2456C2550 0 2594 -45 2594 -138V-562C2594 -656 2550 -700 2456 -700H2187C2094 -700 2049 -656 2049 -562V-138C2049 -45 2094 0 2187 0ZM2215 -163V-537C2215 -552 2220 -556 2234 -556H2409C2424 -556 2428 -552 2428 -537V-163C2428 -149 2424 -144 2409 -144H2234C2220 -144 2215 -149 2215 -163ZM2963 0H3129V-226H3353C3446 -226 3491 -270 3491 -364V-562C3491 -656 3446 -700 3353 -700H2963ZM3129 -369V-557H3306C3320 -557 3325 -553 3325 -538V-388C3325 -373 3320 -369 3306 -369ZM3593 0H3759V-241H3856L3973 0H4146L4025 -253C4090 -265 4121 -308 4121 -387V-562C4121 -656 4076 -700 3983 -700H3593ZM3759 -379V-559H3936C3950 -559 3955 -555 3955 -540V-398C3955 -383 3950 -379 3936 -379ZM4371 0H4640C4734 0 4778 -45 4778 -138V-562C4778 -656 4734 -700 4640 -700H4371C4278 -700 4233 -656 4233 -562V-138C4233 -45 4278 0 4371 0ZM4399 -163V-537C4399 -552 4404 -556 4418 -556H4593C4608 -556 4612 -552 4612 -537V-163C4612 -149 4608 -144 4593 -144H4418C4404 -144 4399 -149 4399 -163ZM4905 0H5305C5398 0 5443 -45 5443 -138V-562C5443 -656 5398 -700 5305 -700H4905ZM5071 -144V-556H5258C5272 -556 5277 -552 5277 -537V-163C5277 -149 5272 -144 5258 -144ZM5703 0H5960C6052 0 6098 -47 6098 -138V-700H5932V-166C5932 -153 5927 -147 5913 -147H5750C5737 -147 5731 -153 5731 -166V-700H5565V-138C5565 -47 5612 0 5703 0ZM6367 0H6533V-555H6716V-700H6185V-555H6367ZM6920 0H7189C7283 0 7327 -45 7327 -138V-562C7327 -656 7283 -700 7189 -700H6920C6827 -700 6782 -656 6782 -562V-138C6782 -45 6827 0 6920 0ZM6948 -163V-537C6948 -552 6953 -556 6967 -556H7142C7157 -556 7161 -552 7161 -537V-163C7161 -149 7157 -144 7142 -144H6967C6953 -144 6948 -149 6948 -163ZM7422 0H7584V-161H7422Z"/></svg><span class="sr">Novo produto.</span></span><span class="ol grad" data-w="Black" data-em="6.2290"><svg viewBox="70 -700 6229 700" style="--em:6.2290" aria-hidden="true" focusable="false"><defs><linearGradient id="olg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg2)" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM1928 0H2100L2140 -148H2363L2403 0H2582L2369 -700H2140ZM2178 -289 2252 -563 2325 -289ZM2885 0H3051V-241H3148L3265 0H3438L3317 -253C3382 -265 3413 -308 3413 -387V-562C3413 -656 3368 -700 3275 -700H2885ZM3051 -379V-559H3228C3242 -559 3247 -555 3247 -540V-398C3247 -383 3242 -379 3228 -379ZM3538 0H4020V-144H3704V-287H3957V-429H3704V-556H4020V-700H3538ZM4133 0H4294V-434L4556 0H4710V-700H4549V-289L4302 -700H4133ZM4850 0H5250C5343 0 5388 -45 5388 -138V-562C5388 -656 5343 -700 5250 -700H4850ZM5016 -144V-556H5203C5217 -556 5222 -552 5222 -537V-163C5222 -149 5217 -144 5203 -144ZM5440 0H5612L5652 -148H5875L5915 0H6094L5881 -700H5652ZM5690 -289 5764 -563 5837 -289ZM6137 0H6299V-161H6137Z"/></svg><span class="sr">Nova renda.</span></span></h1>
+      <p class="p-l ld" style="--d:.5s">Truco, cacheta, buraco e tranca entre jogadores. Você indica, a galera joga e 40% da taxa de cada mesa é sua.</p>
+      <div class="btns ld" style="--d:.65s">
+        <a class="btn btn-p" href="#fim">Quero ser afiliado<span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+        <a class="btn btn-g" href="#conta">Fazer a conta<span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-foot ld" style="--d:.9s"><div class="wrap">Role para descobrir<svg><use href="#i-down"/></svg></div></div>
+</section>
+
+<!-- 01 · A OPORTUNIDADE -->
+<section class="sec light sheet" id="oportunidade" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>01</b><i></i>A oportunidade</p>
+    <div class="intro-txt">
+      <p class="st words">Você já sabe indicar. <span class="hl">Agora tem um produto novo para indicar.</span></p>
+      <p class="lead rv">O EstrelaGames é jogo de cartas entre jogadores, com a cara do Brasil. Um produto novo, com muito potencial e com muita gente chegando para jogar.</p>
+    </div>
+  </div>
+
+  <div class="marq" aria-label="Novo produto, nova renda, muita gente.">
+    <div class="marq-t" id="marq">
+      <span class="ttl" aria-hidden="true"><span class="ol" data-w="Black" data-em="7.2570"><svg viewBox="70 -700 7257 700" style="--em:7.2570" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM2187 0H2456C2550 0 2594 -45 2594 -138V-562C2594 -656 2550 -700 2456 -700H2187C2094 -700 2049 -656 2049 -562V-138C2049 -45 2094 0 2187 0ZM2215 -163V-537C2215 -552 2220 -556 2234 -556H2409C2424 -556 2428 -552 2428 -537V-163C2428 -149 2424 -144 2409 -144H2234C2220 -144 2215 -149 2215 -163ZM2963 0H3129V-226H3353C3446 -226 3491 -270 3491 -364V-562C3491 -656 3446 -700 3353 -700H2963ZM3129 -369V-557H3306C3320 -557 3325 -553 3325 -538V-388C3325 -373 3320 -369 3306 -369ZM3593 0H3759V-241H3856L3973 0H4146L4025 -253C4090 -265 4121 -308 4121 -387V-562C4121 -656 4076 -700 3983 -700H3593ZM3759 -379V-559H3936C3950 -559 3955 -555 3955 -540V-398C3955 -383 3950 -379 3936 -379ZM4371 0H4640C4734 0 4778 -45 4778 -138V-562C4778 -656 4734 -700 4640 -700H4371C4278 -700 4233 -656 4233 -562V-138C4233 -45 4278 0 4371 0ZM4399 -163V-537C4399 -552 4404 -556 4418 -556H4593C4608 -556 4612 -552 4612 -537V-163C4612 -149 4608 -144 4593 -144H4418C4404 -144 4399 -149 4399 -163ZM4905 0H5305C5398 0 5443 -45 5443 -138V-562C5443 -656 5398 -700 5305 -700H4905ZM5071 -144V-556H5258C5272 -556 5277 -552 5277 -537V-163C5277 -149 5272 -144 5258 -144ZM5703 0H5960C6052 0 6098 -47 6098 -138V-700H5932V-166C5932 -153 5927 -147 5913 -147H5750C5737 -147 5731 -153 5731 -166V-700H5565V-138C5565 -47 5612 0 5703 0ZM6367 0H6533V-555H6716V-700H6185V-555H6367ZM6920 0H7189C7283 0 7327 -45 7327 -138V-562C7327 -656 7283 -700 7189 -700H6920C6827 -700 6782 -656 6782 -562V-138C6782 -45 6827 0 6920 0ZM6948 -163V-537C6948 -552 6953 -556 6967 -556H7142C7157 -556 7161 -552 7161 -537V-163C7161 -149 7157 -144 7142 -144H6967C6953 -144 6948 -149 6948 -163Z"/></svg><span class="sr">Novo produto</span></span></span><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+      <span class="ttl" aria-hidden="true"><span class="ol dim" data-w="Black" data-em="6.0240"><svg viewBox="70 -700 6024 700" style="--em:6.0240" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM1928 0H2100L2140 -148H2363L2403 0H2582L2369 -700H2140ZM2178 -289 2252 -563 2325 -289ZM2885 0H3051V-241H3148L3265 0H3438L3317 -253C3382 -265 3413 -308 3413 -387V-562C3413 -656 3368 -700 3275 -700H2885ZM3051 -379V-559H3228C3242 -559 3247 -555 3247 -540V-398C3247 -383 3242 -379 3228 -379ZM3538 0H4020V-144H3704V-287H3957V-429H3704V-556H4020V-700H3538ZM4133 0H4294V-434L4556 0H4710V-700H4549V-289L4302 -700H4133ZM4850 0H5250C5343 0 5388 -45 5388 -138V-562C5388 -656 5343 -700 5250 -700H4850ZM5016 -144V-556H5203C5217 -556 5222 -552 5222 -537V-163C5222 -149 5217 -144 5203 -144ZM5440 0H5612L5652 -148H5875L5915 0H6094L5881 -700H5652ZM5690 -289 5764 -563 5837 -289Z"/></svg><span class="sr">Nova renda</span></span></span><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+      <span class="ttl" aria-hidden="true"><span class="ol" data-w="Black" data-em="6.2240"><svg viewBox="70 -700 6224 700" style="--em:6.2240" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H228V-425L369 -89H479L620 -425V0H782V-700H598L427 -310L255 -700H70ZM1055 0H1312C1404 0 1450 -47 1450 -138V-700H1284V-166C1284 -153 1279 -147 1265 -147H1102C1089 -147 1083 -153 1083 -166V-700H917V-138C917 -47 964 0 1055 0ZM1585 0H1751V-700H1585ZM2025 0H2191V-555H2374V-700H1843V-555H2025ZM2324 0H2496L2536 -148H2759L2799 0H2978L2765 -700H2536ZM2574 -289 2648 -563 2721 -289ZM3406 0H3665C3758 0 3803 -45 3803 -138V-397H3520V-260H3638V-162C3638 -148 3633 -143 3619 -143H3453C3439 -143 3434 -148 3434 -162V-538C3434 -553 3439 -557 3453 -557H3619C3633 -557 3638 -553 3638 -538V-469H3803V-562C3803 -656 3758 -700 3665 -700H3406C3313 -700 3268 -656 3268 -562V-138C3268 -45 3313 0 3406 0ZM3926 0H4408V-144H4092V-287H4345V-429H4092V-556H4408V-700H3926ZM4521 0H4682V-434L4944 0H5098V-700H4937V-289L4690 -700H4521ZM5372 0H5538V-555H5721V-700H5190V-555H5372ZM5812 0H6294V-144H5978V-287H6231V-429H5978V-556H6294V-700H5812Z"/></svg><span class="sr">Muita gente</span></span></span><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+      <span class="ttl" aria-hidden="true"><span class="ol" data-w="Black" data-em="7.2570"><svg viewBox="70 -700 7257 700" style="--em:7.2570" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM2187 0H2456C2550 0 2594 -45 2594 -138V-562C2594 -656 2550 -700 2456 -700H2187C2094 -700 2049 -656 2049 -562V-138C2049 -45 2094 0 2187 0ZM2215 -163V-537C2215 -552 2220 -556 2234 -556H2409C2424 -556 2428 -552 2428 -537V-163C2428 -149 2424 -144 2409 -144H2234C2220 -144 2215 -149 2215 -163ZM2963 0H3129V-226H3353C3446 -226 3491 -270 3491 -364V-562C3491 -656 3446 -700 3353 -700H2963ZM3129 -369V-557H3306C3320 -557 3325 -553 3325 -538V-388C3325 -373 3320 -369 3306 -369ZM3593 0H3759V-241H3856L3973 0H4146L4025 -253C4090 -265 4121 -308 4121 -387V-562C4121 -656 4076 -700 3983 -700H3593ZM3759 -379V-559H3936C3950 -559 3955 -555 3955 -540V-398C3955 -383 3950 -379 3936 -379ZM4371 0H4640C4734 0 4778 -45 4778 -138V-562C4778 -656 4734 -700 4640 -700H4371C4278 -700 4233 -656 4233 -562V-138C4233 -45 4278 0 4371 0ZM4399 -163V-537C4399 -552 4404 -556 4418 -556H4593C4608 -556 4612 -552 4612 -537V-163C4612 -149 4608 -144 4593 -144H4418C4404 -144 4399 -149 4399 -163ZM4905 0H5305C5398 0 5443 -45 5443 -138V-562C5443 -656 5398 -700 5305 -700H4905ZM5071 -144V-556H5258C5272 -556 5277 -552 5277 -537V-163C5277 -149 5272 -144 5258 -144ZM5703 0H5960C6052 0 6098 -47 6098 -138V-700H5932V-166C5932 -153 5927 -147 5913 -147H5750C5737 -147 5731 -153 5731 -166V-700H5565V-138C5565 -47 5612 0 5703 0ZM6367 0H6533V-555H6716V-700H6185V-555H6367ZM6920 0H7189C7283 0 7327 -45 7327 -138V-562C7327 -656 7283 -700 7189 -700H6920C6827 -700 6782 -656 6782 -562V-138C6782 -45 6827 0 6920 0ZM6948 -163V-537C6948 -552 6953 -556 6967 -556H7142C7157 -556 7161 -552 7161 -537V-163C7161 -149 7157 -144 7142 -144H6967C6953 -144 6948 -149 6948 -163Z"/></svg><span class="sr">Novo produto</span></span></span><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+      <span class="ttl" aria-hidden="true"><span class="ol dim" data-w="Black" data-em="6.0240"><svg viewBox="70 -700 6024 700" style="--em:6.0240" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM1928 0H2100L2140 -148H2363L2403 0H2582L2369 -700H2140ZM2178 -289 2252 -563 2325 -289ZM2885 0H3051V-241H3148L3265 0H3438L3317 -253C3382 -265 3413 -308 3413 -387V-562C3413 -656 3368 -700 3275 -700H2885ZM3051 -379V-559H3228C3242 -559 3247 -555 3247 -540V-398C3247 -383 3242 -379 3228 -379ZM3538 0H4020V-144H3704V-287H3957V-429H3704V-556H4020V-700H3538ZM4133 0H4294V-434L4556 0H4710V-700H4549V-289L4302 -700H4133ZM4850 0H5250C5343 0 5388 -45 5388 -138V-562C5388 -656 5343 -700 5250 -700H4850ZM5016 -144V-556H5203C5217 -556 5222 -552 5222 -537V-163C5222 -149 5217 -144 5203 -144ZM5440 0H5612L5652 -148H5875L5915 0H6094L5881 -700H5652ZM5690 -289 5764 -563 5837 -289Z"/></svg><span class="sr">Nova renda</span></span></span><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+      <span class="ttl" aria-hidden="true"><span class="ol" data-w="Black" data-em="6.2240"><svg viewBox="70 -700 6224 700" style="--em:6.2240" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H228V-425L369 -89H479L620 -425V0H782V-700H598L427 -310L255 -700H70ZM1055 0H1312C1404 0 1450 -47 1450 -138V-700H1284V-166C1284 -153 1279 -147 1265 -147H1102C1089 -147 1083 -153 1083 -166V-700H917V-138C917 -47 964 0 1055 0ZM1585 0H1751V-700H1585ZM2025 0H2191V-555H2374V-700H1843V-555H2025ZM2324 0H2496L2536 -148H2759L2799 0H2978L2765 -700H2536ZM2574 -289 2648 -563 2721 -289ZM3406 0H3665C3758 0 3803 -45 3803 -138V-397H3520V-260H3638V-162C3638 -148 3633 -143 3619 -143H3453C3439 -143 3434 -148 3434 -162V-538C3434 -553 3439 -557 3453 -557H3619C3633 -557 3638 -553 3638 -538V-469H3803V-562C3803 -656 3758 -700 3665 -700H3406C3313 -700 3268 -656 3268 -562V-138C3268 -45 3313 0 3406 0ZM3926 0H4408V-144H4092V-287H4345V-429H4092V-556H4408V-700H3926ZM4521 0H4682V-434L4944 0H5098V-700H4937V-289L4690 -700H4521ZM5372 0H5538V-555H5721V-700H5190V-555H5372ZM5812 0H6294V-144H5978V-287H6231V-429H5978V-556H6294V-700H5812Z"/></svg><span class="sr">Muita gente</span></span></span><svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="lbl flow-h rv" data-stop="120">O que muda</p>
+    <div class="flow">
+      <div class="fc rv"><span class="lbl">Hoje</span><p class="h3">Você indica</p><p class="p-m mut">Sua audiência confia nas suas indicações.</p></div>
+      <div class="fa rv" style="--d:.1s"><svg><use href="#i-arrow"/></svg><small>Seu link</small></div>
+      <div class="fc rv" style="--d:.2s"><span class="lbl">Com o EstrelaGames</span><p class="h3">Um jogo novo</p><p class="p-m mut">Truco, cacheta e buraco, que todo mundo já sabe jogar.</p></div>
+      <div class="fa rv" style="--d:.3s"><svg><use href="#i-arrow"/></svg><small>Partidas</small></div>
+      <div class="fc hl rv" style="--d:.4s"><span class="lbl">Resultado</span><p class="h3">Nova renda</p><p class="p-m mut">40% da taxa de cada mesa que os seus indicados jogarem.</p></div>
+    </div>
+
+    <div class="v-end">
+      <p class="st words">Jogo que todo mundo já sabe jogar. <span class="hl">Indicação que converte.</span></p>
+      <p class="lead rv">Baralho não precisa de explicação. E os 30 mil primeiros jogadores ganham R$ 5 para começar.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- 02 · SEU GANHO -->
+<section class="sec" id="ganho" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>02</b><i></i>Seu ganho</p>
+    <div class="head">
+      <h2 class="ttl l rv"><span class="ol" data-em="6.1870"><svg viewBox="18 -700 6187 700" style="--em:6.1870" aria-hidden="true" focusable="false"><path fill="currentColor" d="M235 0H403L620 -700H466L321 -159L176 -700H18ZM828 0H1085C1180 0 1225 -45 1225 -140V-560C1225 -655 1180 -700 1085 -700H828C733 -700 688 -655 688 -560V-140C688 -45 733 0 828 0ZM832 -152V-548C832 -563 837 -568 852 -568H1061C1076 -568 1081 -563 1081 -548V-152C1081 -137 1076 -132 1061 -132H852C837 -132 832 -137 832 -152ZM1489 0H1721C1816 0 1861 -45 1861 -140V-254H1717V-152C1717 -137 1712 -132 1697 -132H1513C1498 -132 1493 -137 1493 -152V-548C1493 -563 1498 -568 1513 -568H1697C1712 -568 1717 -563 1717 -548V-446H1861V-560C1861 -655 1816 -700 1721 -700H1489C1394 -700 1349 -655 1349 -560V-140C1349 -45 1394 0 1489 0ZM1989 0H2460V-132H2133V-293H2398V-423H2133V-568H2460V-700H1989ZM2037 -766H2166L2227 -829L2288 -766H2417L2287 -896H2167ZM2827 0H2971V-700H2827ZM3129 0H3269V-467L3544 0H3684V-700H3544V-249L3279 -700H3129ZM3842 0H4225C4320 0 4365 -45 4365 -140V-560C4365 -655 4320 -700 4225 -700H3842ZM3986 -132V-568H4201C4216 -568 4221 -563 4221 -548V-152C4221 -137 4216 -132 4201 -132ZM4506 0H4650V-700H4506ZM4931 0H5163C5258 0 5303 -45 5303 -140V-254H5159V-152C5159 -137 5154 -132 5139 -132H4955C4940 -132 4935 -137 4935 -152V-548C4935 -563 4940 -568 4955 -568H5139C5154 -568 5159 -563 5159 -548V-446H5303V-560C5303 -655 5258 -700 5163 -700H4931C4836 -700 4791 -655 4791 -560V-140C4791 -45 4836 0 4931 0ZM5360 0H5512L5555 -152H5795L5838 0H5996L5783 -700H5573ZM5592 -284 5675 -578 5758 -284ZM6045 0H6205V-156H6045Z"/></svg><span class="sr">Você indica.</span></span><span class="ol grad" data-em="6.5440"><svg viewBox="16 -700 6544 700" style="--em:6.5440" aria-hidden="true" focusable="false"><defs><linearGradient id="olg10" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg10)" d="M16 0H168L211 -152H451L494 0H652L439 -700H229ZM248 -284 331 -578 414 -284ZM969 0H1107V-446L1258 -93H1364L1515 -446V0H1657V-700H1499L1313 -288L1127 -700H969ZM1815 0H2286V-132H1959V-293H2224V-423H1959V-568H2286V-700H1815ZM2524 0H2754C2849 0 2894 -45 2894 -140V-256C2894 -346 2838 -381 2750 -400L2564 -440C2538 -446 2530 -452 2530 -474V-550C2530 -565 2535 -570 2550 -570H2722C2737 -570 2742 -565 2742 -550V-480H2882V-560C2882 -655 2837 -700 2742 -700H2526C2431 -700 2386 -655 2386 -560V-452C2386 -362 2442 -327 2530 -308L2716 -268C2742 -262 2750 -256 2750 -234V-150C2750 -135 2745 -130 2730 -130H2544C2529 -130 2524 -135 2524 -150V-228H2384V-140C2384 -45 2429 0 2524 0ZM2956 0H3108L3151 -152H3391L3434 0H3592L3379 -700H3169ZM3188 -284 3271 -578 3354 -284ZM3909 0H4053V-234H4279C4374 -234 4419 -279 4419 -374V-560C4419 -655 4374 -700 4279 -700H3909ZM4053 -366V-568H4255C4270 -568 4275 -563 4275 -548V-386C4275 -371 4270 -366 4255 -366ZM4427 0H4579L4622 -152H4862L4905 0H5063L4850 -700H4640ZM4659 -284 4742 -578 4825 -284ZM5267 0H5508C5603 0 5648 -45 5648 -140V-386H5372V-260H5504V-152C5504 -137 5499 -132 5484 -132H5291C5276 -132 5271 -137 5271 -152V-548C5271 -563 5276 -568 5291 -568H5484C5499 -568 5504 -563 5504 -548V-468H5648V-560C5648 -655 5603 -700 5508 -700H5267C5172 -700 5127 -655 5127 -560V-140C5127 -45 5172 0 5267 0ZM5715 0H5867L5910 -152H6150L6193 0H6351L6138 -700H5928ZM5947 -284 6030 -578 6113 -284ZM6400 0H6560V-156H6400Z"/></svg><span class="sr">A mesa paga.</span></span></h2>
+      <p class="lead rv" style="--d:.15s">Toda mesa tem uma taxa sobre o pote. Das mesas dos seus indicados, 40% dessa taxa é sua, ganhe quem ganhar a partida.</p>
+    </div>
+    <div class="flow dark">
+      <div class="fc rv"><span class="lbl">Sua audiência</span><p class="h3">Quem já confia em você</p><p class="p-m mut">Entra pelo seu link de afiliado.</p></div>
+      <div class="fa rv" style="--d:.1s"><svg><use href="#i-arrow"/></svg></div>
+      <div class="fc app rv" style="--d:.2s"><span class="lg"><img src="assets/eg/logo.svg" alt=""></span><p class="h3">EstrelaGames</p><p class="p-m mut">Joga truco, cacheta, buraco e tranca.</p></div>
+      <div class="fa rv" style="--d:.3s"><svg><use href="#i-arrow"/></svg></div>
+      <div class="fc money rv" style="--d:.4s"><span class="lbl">Sua renda</span><p class="big">40% da taxa</p><p class="p-m">De cada mesa dos seus indicados.</p></div>
+    </div>
+    <div class="res" data-stop="120">
+      <div class="res-l">
+        <p class="st words">Você divulga. <span class="hl">A gente cuida do resto.</span></p>
+        <p class="res-foot rv">Com você: <b>o seu link e a sua audiência.</b> Só isso.</p>
+      </div>
+      <div class="res-list">
+        <div class="ri rv"><span class="ck"><svg><use href="#i-check"/></svg></span><div><p class="h4">Produto pronto</p><p class="p-m mut">No ar, no celular e no computador.</p></div></div>
+        <div class="ri rv"><span class="ck"><svg><use href="#i-check"/></svg></span><div><p class="h4">Mesas cheias</p><p class="p-m mut">A nossa base de jogadores volta a jogar no produto novo.</p></div></div>
+        <div class="ri rv"><span class="ck"><svg><use href="#i-check"/></svg></span><div><p class="h4">R$ 5 de boas-vindas</p><p class="p-m mut">Para os 30 mil primeiros jogadores começarem.</p></div></div>
+        <div class="ri rv"><span class="ck"><svg><use href="#i-check"/></svg></span><div><p class="h4">Compra e saque por PIX</p><p class="p-m mut">Fichas e prêmios direto no app.</p></div></div>
+        <div class="ri rv"><span class="ck"><svg><use href="#i-check"/></svg></span><div><p class="h4">Jogo entre jogadores</p><p class="p-m mut">A casa não joga contra ninguém.</p></div></div>
+        <div class="ri rv"><span class="ck"><svg><use href="#i-check"/></svg></span><div><p class="h4">Batalhas e ranking</p><p class="p-m mut">Motivo para o jogador voltar todo dia.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · MESAS CHEIAS -->
+<section class="sec light" id="salao" data-stop>
+  <div class="wrap sal">
+    <div class="sal-l">
+    <p class="kick rv"><b>03</b><i></i>Mesas cheias</p>
+    <h2 class="ttl l rv"><span class="ol" data-em="6.4510"><svg viewBox="79 -700 6451 700" style="--em:6.4510" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H217V-446L368 -93H474L625 -446V0H767V-700H609L423 -288L237 -700H79ZM1058 0H1302C1397 0 1442 -45 1442 -140V-700H1298V-152C1298 -137 1293 -132 1278 -132H1082C1067 -132 1062 -137 1062 -152V-700H918V-140C918 -45 963 0 1058 0ZM1593 0H1737V-700H1593ZM2031 0H2175V-570H2365V-700H1841V-570H2031ZM2326 0H2478L2521 -152H2761L2804 0H2962L2749 -700H2539ZM2558 -284 2641 -578 2724 -284ZM3402 0H3643C3738 0 3783 -45 3783 -140V-386H3507V-260H3639V-152C3639 -137 3634 -132 3619 -132H3426C3411 -132 3406 -137 3406 -152V-548C3406 -563 3411 -568 3426 -568H3619C3634 -568 3639 -563 3639 -548V-468H3783V-560C3783 -655 3738 -700 3643 -700H3402C3307 -700 3262 -655 3262 -560V-140C3262 -45 3307 0 3402 0ZM3921 0H4392V-132H4065V-293H4330V-423H4065V-568H4392V-700H3921ZM4519 0H4659V-467L4934 0H5074V-700H4934V-249L4669 -700H4519ZM5368 0H5512V-570H5702V-700H5178V-570H5368ZM5806 0H6277V-132H5950V-293H6215V-423H5950V-568H6277V-700H5806ZM6370 0H6530V-156H6370Z"/></svg><span class="sr">Muita gente.</span></span><span class="ol brand" data-em="5.9390"><svg viewBox="79 -700 5939 700" style="--em:5.9390" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H217V-446L368 -93H474L625 -446V0H767V-700H609L423 -288L237 -700H79ZM925 0H1396V-132H1069V-293H1334V-423H1069V-568H1396V-700H925ZM1634 0H1864C1959 0 2004 -45 2004 -140V-256C2004 -346 1948 -381 1860 -400L1674 -440C1648 -446 1640 -452 1640 -474V-550C1640 -565 1645 -570 1660 -570H1832C1847 -570 1852 -565 1852 -550V-480H1992V-560C1992 -655 1947 -700 1852 -700H1636C1541 -700 1496 -655 1496 -560V-452C1496 -362 1552 -327 1640 -308L1826 -268C1852 -262 1860 -256 1860 -234V-150C1860 -135 1855 -130 1840 -130H1654C1639 -130 1634 -135 1634 -150V-228H1494V-140C1494 -45 1539 0 1634 0ZM2066 0H2218L2261 -152H2501L2544 0H2702L2489 -700H2279ZM2298 -284 2381 -578 2464 -284ZM3142 0H3374C3469 0 3514 -45 3514 -140V-254H3370V-152C3370 -137 3365 -132 3350 -132H3166C3151 -132 3146 -137 3146 -152V-548C3146 -563 3151 -568 3166 -568H3350C3365 -568 3370 -563 3370 -548V-446H3514V-560C3514 -655 3469 -700 3374 -700H3142C3047 -700 3002 -655 3002 -560V-140C3002 -45 3047 0 3142 0ZM3642 0H3786V-292H4034V0H4178V-700H4034V-424H3786V-700H3642ZM4336 0H4807V-132H4480V-293H4745V-423H4480V-568H4807V-700H4336ZM4934 0H5078V-700H4934ZM5173 0H5325L5368 -152H5608L5651 0H5809L5596 -700H5386ZM5405 -284 5488 -578 5571 -284ZM5858 0H6018V-156H5858Z"/></svg><span class="sr">Mesa cheia.</span></span></h2>
+    <p class="lead rv">O EstrelaGames já nasce com público: a nossa base de jogadores vai ser reativada para o produto novo. O seu indicado chega e já encontra mesa rodando.</p>
+    <div class="notes">
+      <div class="note rv"><img src="assets/icons/swords.webp" alt=""><div><b>A casa não joga contra ninguém</b><span class="p-m mut">É jogo entre jogadores. A plataforma retém uma taxa sobre o pote, ganhe quem ganhar.</span></div></div>
+      <div class="note rv" style="--d:.1s"><img src="assets/icons/gift.webp" alt=""><div><b>R$ 5 para começar</b><span class="p-m mut">Os 30 mil primeiros jogadores ganham R$ 5 de bônus.</span></div></div>
+    </div>
+    </div>
+
+    <div class="hall rv" id="hall" aria-hidden="true">
+      <div class="hall-in">
+        <svg class="hall-lines" viewBox="0 0 720 528">
+          <path class="base" d="M120 180 C120 212, 248 208, 248 240"/>
+          <path class="base" d="M360 180 L360 240"/>
+          <path class="base" d="M600 180 C600 212, 472 208, 472 240"/>
+          <path class="pulse" pathLength="100" d="M120 180 C120 212, 248 208, 248 240"/>
+          <path class="pulse b" pathLength="100" d="M360 180 L360 240"/>
+          <path class="pulse c" pathLength="100" d="M600 180 C600 212, 472 208, 472 240"/>
+        </svg>
+        <div class="appi" style="left:120px"><span class="sq"><img src="assets/icons/fire.webp" alt=""></span><b>Base reativada</b></div>
+        <div class="appi" style="left:360px"><span class="sq"><img src="assets/icons/gift.webp" alt=""></span><b>Novos jogadores</b></div>
+        <div class="appi me" style="left:600px"><span class="sq"><img src="assets/icons/user.webp" alt=""></span><b>Seus indicados</b><span class="pill br">Seu link</span></div>
+        <div class="tbl">
+          <div class="felt"><img src="assets/icons/truco.webp" alt=""><b>Mesa cheia · 4/4</b><small>Truco Mineiro · 2x2</small></div>
+          <span class="seat" style="left:30%;top:12.5%"><img src="assets/players/engenheiro_ela.webp" alt=""><span class="bd"><img src="assets/icons/fire.webp" alt=""></span></span>
+          <span class="seat" style="left:70%;top:12.5%"><img src="assets/players/piloto_ele.webp" alt=""><span class="bd"><img src="assets/icons/gift.webp" alt=""></span></span>
+          <span class="seat" style="left:30%;top:87.5%"><img src="assets/players/comandante_ele.webp" alt=""><span class="bd me"><img src="assets/icons/user.webp" alt=""></span></span>
+          <span class="seat" style="left:70%;top:87.5%"><img src="assets/players/navegador_ela.webp" alt=""><span class="bd me"><img src="assets/icons/user.webp" alt=""></span></span>
+        </div>
+        <p class="hall-cap">Seus indicados na mesma mesa que todo mundo</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 04 · O PRODUTO (fixa, telas passando de lado para o meio) -->
+<section class="sec prova" id="prova" data-stop>
+  <div>
+    <div class="stick">
+      <div class="wrap prova-head">
+        <p class="kick"><b>04</b><i></i>O produto</p>
+        <h2 class="ttl l center"><span class="ol" data-em="8.5010"><svg viewBox="79 -700 8501 700" style="--em:8.5010" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H219V-467L494 0H634V-700H494V-249L229 -700H79ZM729 0H881L924 -152H1164L1207 0H1365L1152 -700H942ZM886 -764H960V-783C960 -800 969 -804 983 -804C1025 -804 1077 -758 1132 -758C1178 -758 1210 -793 1210 -870V-895H1134V-876C1134 -862 1127 -855 1113 -855C1071 -855 1030 -901 970 -901C924 -901 886 -866 886 -789ZM961 -284 1044 -578 1127 -284ZM1569 0H1826C1921 0 1966 -45 1966 -140V-560C1966 -655 1921 -700 1826 -700H1569C1474 -700 1429 -655 1429 -560V-140C1429 -45 1474 0 1569 0ZM1573 -152V-548C1573 -563 1578 -568 1593 -568H1802C1817 -568 1822 -563 1822 -548V-152C1822 -137 1817 -132 1802 -132H1593C1578 -132 1573 -137 1573 -152ZM2347 0H2818V-132H2491V-293H2756V-423H2491V-568H2818V-700H2347ZM2510 -766H2626L2775 -910H2600ZM3185 0H3329V-234H3555C3650 -234 3695 -279 3695 -374V-560C3695 -655 3650 -700 3555 -700H3185ZM3329 -366V-568H3531C3546 -568 3551 -563 3551 -548V-386C3551 -371 3546 -366 3531 -366ZM3811 0H3955V-247H4071L4187 0H4342L4223 -255C4289 -267 4320 -312 4320 -391V-560C4320 -655 4275 -700 4180 -700H3811ZM3955 -375V-570H4156C4171 -570 4176 -565 4176 -550V-395C4176 -380 4171 -375 4156 -375ZM4584 0H4841C4936 0 4981 -45 4981 -140V-560C4981 -655 4936 -700 4841 -700H4584C4489 -700 4444 -655 4444 -560V-140C4444 -45 4489 0 4584 0ZM4588 -152V-548C4588 -563 4593 -568 4608 -568H4817C4832 -568 4837 -563 4837 -548V-152C4837 -137 4832 -132 4817 -132H4608C4593 -132 4588 -137 4588 -152ZM5122 0H5260V-446L5411 -93H5517L5668 -446V0H5810V-700H5652L5466 -288L5280 -700H5122ZM5968 0H6439V-132H6112V-293H6377V-423H6112V-568H6439V-700H5968ZM6677 0H6907C7002 0 7047 -45 7047 -140V-256C7047 -346 6991 -381 6903 -400L6717 -440C6691 -446 6683 -452 6683 -474V-550C6683 -565 6688 -570 6703 -570H6875C6890 -570 6895 -565 6895 -550V-480H7035V-560C7035 -655 6990 -700 6895 -700H6679C6584 -700 6539 -655 6539 -560V-452C6539 -362 6595 -327 6683 -308L6869 -268C6895 -262 6903 -256 6903 -234V-150C6903 -135 6898 -130 6883 -130H6697C6682 -130 6677 -135 6677 -150V-228H6537V-140C6537 -45 6582 0 6677 0ZM7303 0H7533C7628 0 7673 -45 7673 -140V-256C7673 -346 7617 -381 7529 -400L7343 -440C7317 -446 7309 -452 7309 -474V-550C7309 -565 7314 -570 7329 -570H7501C7516 -570 7521 -565 7521 -550V-480H7661V-560C7661 -655 7616 -700 7521 -700H7305C7210 -700 7165 -655 7165 -560V-452C7165 -362 7221 -327 7309 -308L7495 -268C7521 -262 7529 -256 7529 -234V-150C7529 -135 7524 -130 7509 -130H7323C7308 -130 7303 -135 7303 -150V-228H7163V-140C7163 -45 7208 0 7303 0ZM7735 0H7887L7930 -152H8170L8213 0H8371L8158 -700H7948ZM7967 -284 8050 -578 8133 -284ZM8420 0H8580V-156H8420Z"/></svg><span class="sr">Não é promessa.</span></span><span class="ol grad" data-em="5.6220"><svg viewBox="79 -700 5622 700" style="--em:5.6220" aria-hidden="true" focusable="false"><defs><linearGradient id="olg14" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg14)" d="M79 0H550V-132H223V-293H488V-423H223V-568H550V-700H79ZM788 0H1018C1113 0 1158 -45 1158 -140V-256C1158 -346 1102 -381 1014 -400L828 -440C802 -446 794 -452 794 -474V-550C794 -565 799 -570 814 -570H986C1001 -570 1006 -565 1006 -550V-480H1146V-560C1146 -655 1101 -700 1006 -700H790C695 -700 650 -655 650 -560V-452C650 -362 706 -327 794 -308L980 -268C1006 -262 1014 -256 1014 -234V-150C1014 -135 1009 -130 994 -130H808C793 -130 788 -135 788 -150V-228H648V-140C648 -45 693 0 788 0ZM1421 0H1565V-570H1755V-700H1231V-570H1421ZM1716 0H1868L1911 -152H2151L2194 0H2352L2139 -700H1929ZM1948 -284 2031 -578 2114 -284ZM1959 -766H2075L2224 -910H2049ZM2669 0H2809V-467L3084 0H3224V-700H3084V-249L2819 -700H2669ZM3505 0H3762C3857 0 3902 -45 3902 -140V-560C3902 -655 3857 -700 3762 -700H3505C3410 -700 3365 -655 3365 -560V-140C3365 -45 3410 0 3505 0ZM3509 -152V-548C3509 -563 3514 -568 3529 -568H3738C3753 -568 3758 -563 3758 -548V-152C3758 -137 3753 -132 3738 -132H3529C3514 -132 3509 -137 3509 -152ZM4202 0H4354L4397 -152H4637L4680 0H4838L4625 -700H4415ZM4434 -284 4517 -578 4600 -284ZM4933 0H5077V-247H5193L5309 0H5464L5345 -255C5411 -267 5442 -312 5442 -391V-560C5442 -655 5397 -700 5302 -700H4933ZM5077 -375V-570H5278C5293 -570 5298 -565 5298 -550V-395C5298 -380 5293 -375 5278 -375ZM5541 0H5701V-156H5541Z"/></svg><span class="sr">Está no ar.</span></span></h2>
+        <p class="lead">O EstrelaGames já existe, no celular e no computador.</p>
+      </div>
+      <div class="track" id="track">
+        <figure class="tph"><img src="assets/app/home.webp" alt="Home com o personagem"></figure>
+        <figure class="tph"><img src="assets/app/loja.webp" alt="Loja"></figure>
+        <figure class="tph"><img src="assets/app/truco.webp" alt="Partida de Truco"></figure>
+        <figure class="tph"><img src="assets/app/chat.webp" alt="Chat"></figure>
+        <figure class="tph"><img src="assets/app/ranking.webp" alt="Ranking"></figure>
+        <figure class="tph"><img src="assets/app/pacote.webp" alt="Pacote de personagens"></figure>
+        <figure class="tph"><img src="assets/app/lobby.webp" alt="Lobby do Truco"></figure>
+        <figure class="tph"><img src="assets/app/batalhas.webp" alt="Batalhas"></figure>
+      </div>
+      <div class="btns"><a class="btn btn-p" href="https://robertaestrela.github.io/truco-mineiro-estrelagames/" target="_blank" rel="noopener">Ver o produto<span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · OS JOGOS -->
+<section class="sec" id="app" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>05</b><i></i>Os jogos</p>
+    <h2 class="ttl l rv"><span class="ol" data-em="9.1530"><svg viewBox="72 -700 9153 700" style="--em:9.1530" aria-hidden="true" focusable="false"><path fill="currentColor" d="M212 0H456C551 0 596 -45 596 -140V-700H452V-152C452 -137 447 -132 432 -132H236C221 -132 216 -137 216 -152V-700H72V-140C72 -45 117 0 212 0ZM747 0H885V-446L1036 -93H1142L1293 -446V0H1435V-700H1277L1091 -288L905 -700H747ZM1752 0H1904L1947 -152H2187L2230 0H2388L2175 -700H1965ZM1984 -284 2067 -578 2150 -284ZM2483 0H2627V-234H2853C2948 -234 2993 -279 2993 -374V-560C2993 -655 2948 -700 2853 -700H2483ZM2627 -366V-568H2829C2844 -568 2849 -563 2849 -548V-386C2849 -371 2844 -366 2829 -366ZM3109 0H3253V-234H3479C3574 -234 3619 -279 3619 -374V-560C3619 -655 3574 -700 3479 -700H3109ZM3253 -366V-568H3455C3470 -568 3475 -563 3475 -548V-386C3475 -371 3470 -366 3455 -366ZM4098 0H4330C4425 0 4470 -45 4470 -140V-254H4326V-152C4326 -137 4321 -132 4306 -132H4122C4107 -132 4102 -137 4102 -152V-548C4102 -563 4107 -568 4122 -568H4306C4321 -568 4326 -563 4326 -548V-446H4470V-560C4470 -655 4425 -700 4330 -700H4098C4003 -700 3958 -655 3958 -560V-140C3958 -45 4003 0 4098 0ZM4721 0H4978C5073 0 5118 -45 5118 -140V-560C5118 -655 5073 -700 4978 -700H4721C4626 -700 4581 -655 4581 -560V-140C4581 -45 4626 0 4721 0ZM4725 -152V-548C4725 -563 4730 -568 4745 -568H4954C4969 -568 4974 -563 4974 -548V-152C4974 -137 4969 -132 4954 -132H4745C4730 -132 4725 -137 4725 -152ZM5259 0H5397V-446L5548 -93H5654L5805 -446V0H5947V-700H5789L5603 -288L5417 -700H5259ZM6105 0H6249V-234H6475C6570 -234 6615 -279 6615 -374V-560C6615 -655 6570 -700 6475 -700H6105ZM6249 -366V-568H6451C6466 -568 6471 -563 6471 -548V-386C6471 -371 6466 -366 6451 -366ZM6731 0H7177V-132H6875V-700H6731ZM7286 0H7757V-132H7430V-293H7695V-423H7430V-568H7757V-700H7286ZM8020 0H8164V-570H8354V-700H7830V-570H8020ZM8569 0H8826C8921 0 8966 -45 8966 -140V-560C8966 -655 8921 -700 8826 -700H8569C8474 -700 8429 -655 8429 -560V-140C8429 -45 8474 0 8569 0ZM8573 -152V-548C8573 -563 8578 -568 8593 -568H8802C8817 -568 8822 -563 8822 -548V-152C8822 -137 8817 -132 8802 -132H8593C8578 -132 8573 -137 8573 -152ZM9065 0H9225V-156H9065Z"/></svg><span class="sr">Um app completo.</span></span><span class="ol dim" data-em="8.5730"><svg viewBox="79 -700 8573 700" style="--em:8.5730" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H462C557 0 602 -45 602 -140V-560C602 -655 557 -700 462 -700H79ZM223 -132V-568H438C453 -568 458 -563 458 -548V-152C458 -137 453 -132 438 -132ZM866 0H1123C1218 0 1263 -45 1263 -140V-560C1263 -655 1218 -700 1123 -700H866C771 -700 726 -655 726 -560V-140C726 -45 771 0 866 0ZM870 -152V-548C870 -563 875 -568 890 -568H1099C1114 -568 1119 -563 1119 -548V-152C1119 -137 1114 -132 1099 -132H890C875 -132 870 -137 870 -152ZM1644 0H2090V-132H1788V-700H1644ZM2306 0H2563C2658 0 2703 -45 2703 -140V-560C2703 -655 2658 -700 2563 -700H2306C2211 -700 2166 -655 2166 -560V-140C2166 -45 2211 0 2306 0ZM2310 -152V-548C2310 -563 2315 -568 2330 -568H2539C2554 -568 2559 -563 2559 -548V-152C2559 -137 2554 -132 2539 -132H2330C2315 -132 2310 -137 2310 -152ZM2844 0H3218C3313 0 3358 -45 3358 -140V-250C3358 -297 3337 -336 3287 -358C3333 -383 3350 -419 3350 -466V-560C3350 -655 3305 -700 3210 -700H2844ZM2988 -130V-296H3194C3209 -296 3214 -291 3214 -276V-150C3214 -135 3209 -130 3194 -130ZM2988 -420V-570H3186C3201 -570 3206 -565 3206 -550V-440C3206 -425 3201 -420 3186 -420ZM3487 0H3861C3956 0 4001 -45 4001 -140V-250C4001 -297 3980 -336 3930 -358C3976 -383 3993 -419 3993 -466V-560C3993 -655 3948 -700 3853 -700H3487ZM3631 -130V-296H3837C3852 -296 3857 -291 3857 -276V-150C3857 -135 3852 -130 3837 -130ZM3631 -420V-570H3829C3844 -570 3849 -565 3849 -550V-440C3849 -425 3844 -420 3829 -420ZM4269 0H4413V-239L4641 -700H4487L4342 -388L4197 -700H4041L4269 -239ZM4867 0H5019L5062 -152H5302L5345 0H5503L5290 -700H5080ZM4995 -910 5144 -766H5260L5170 -910ZM5099 -284 5182 -578 5265 -284ZM5820 0H5958V-446L6109 -93H6215L6366 -446V0H6508V-700H6350L6164 -288L5978 -700H5820ZM6666 0H7137V-132H6810V-293H7075V-423H6810V-568H7137V-700H6666ZM7375 0H7605C7700 0 7745 -45 7745 -140V-256C7745 -346 7689 -381 7601 -400L7415 -440C7389 -446 7381 -452 7381 -474V-550C7381 -565 7386 -570 7401 -570H7573C7588 -570 7593 -565 7593 -550V-480H7733V-560C7733 -655 7688 -700 7593 -700H7377C7282 -700 7237 -655 7237 -560V-452C7237 -362 7293 -327 7381 -308L7567 -268C7593 -262 7601 -256 7601 -234V-150C7601 -135 7596 -130 7581 -130H7395C7380 -130 7375 -135 7375 -150V-228H7235V-140C7235 -45 7280 0 7375 0ZM7807 0H7959L8002 -152H8242L8285 0H8443L8230 -700H8020ZM8039 -284 8122 -578 8205 -284ZM8492 0H8652V-156H8492Z"/></svg><span class="sr">Do lobby à mesa.</span></span></h2>
+  </div>
+  <div class="games" id="games">
+    <div class="gc" style="--c:#e5484d"><img src="assets/icons/truco.webp" alt=""><span class="ttl"><span class="ol" data-em="3.0890"><svg viewBox="25 -700 3089 700" style="--em:3.0890" aria-hidden="true" focusable="false"><path fill="currentColor" d="M215 0H359V-570H549V-700H25V-570H215ZM653 0H797V-247H913L1029 0H1184L1065 -255C1131 -267 1162 -312 1162 -391V-560C1162 -655 1117 -700 1022 -700H653ZM797 -375V-570H998C1013 -570 1018 -565 1018 -550V-395C1018 -380 1013 -375 998 -375ZM1436 0H1680C1775 0 1820 -45 1820 -140V-700H1676V-152C1676 -137 1671 -132 1656 -132H1460C1445 -132 1440 -137 1440 -152V-700H1296V-140C1296 -45 1341 0 1436 0ZM2094 0H2326C2421 0 2466 -45 2466 -140V-254H2322V-152C2322 -137 2317 -132 2302 -132H2118C2103 -132 2098 -137 2098 -152V-548C2098 -563 2103 -568 2118 -568H2302C2317 -568 2322 -563 2322 -548V-446H2466V-560C2466 -655 2421 -700 2326 -700H2094C1999 -700 1954 -655 1954 -560V-140C1954 -45 1999 0 2094 0ZM2717 0H2974C3069 0 3114 -45 3114 -140V-560C3114 -655 3069 -700 2974 -700H2717C2622 -700 2577 -655 2577 -560V-140C2577 -45 2622 0 2717 0ZM2721 -152V-548C2721 -563 2726 -568 2741 -568H2950C2965 -568 2970 -563 2970 -548V-152C2970 -137 2965 -132 2950 -132H2741C2726 -132 2721 -137 2721 -152Z"/></svg><span class="sr">Truco</span></span></span><span class="p-s">Paulista e Mineiro</span></div>
+    <div class="gc" style="--c:#14b8a6"><img src="assets/icons/cacheta.webp" alt="" style="filter:hue-rotate(40deg)"><span class="ttl"><span class="ol" data-em="3.4680"><svg viewBox="79 -700 3468 700" style="--em:3.4680" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-234H449C544 -234 589 -279 589 -374V-560C589 -655 544 -700 449 -700H79ZM223 -366V-568H425C440 -568 445 -563 445 -548V-386C445 -371 440 -366 425 -366ZM705 0H849V-700H705ZM1007 0H1151V-287H1416V-417H1151V-568H1478V-700H1007ZM1827 0H1971V-234H2197C2292 -234 2337 -279 2337 -374V-560C2337 -655 2292 -700 2197 -700H1827ZM1971 -366V-568H2173C2188 -568 2193 -563 2193 -548V-386C2193 -371 2188 -366 2173 -366ZM2345 0H2497L2540 -152H2780L2823 0H2981L2768 -700H2558ZM2577 -284 2660 -578 2743 -284ZM3076 0H3220V-287H3485V-417H3220V-568H3547V-700H3076Z"/></svg><span class="sr">Pif Paf</span></span></span><span class="p-s">2 jogadores</span></div>
+    <div class="gc" style="--c:#1f9a4a"><img src="assets/icons/buraco.webp" alt=""><span class="ttl"><span class="ol" data-em="3.7580"><svg viewBox="79 -700 3758 700" style="--em:3.7580" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H453C548 0 593 -45 593 -140V-250C593 -297 572 -336 522 -358C568 -383 585 -419 585 -466V-560C585 -655 540 -700 445 -700H79ZM223 -130V-296H429C444 -296 449 -291 449 -276V-150C449 -135 444 -130 429 -130ZM223 -420V-570H421C436 -570 441 -565 441 -550V-440C441 -425 436 -420 421 -420ZM855 0H1099C1194 0 1239 -45 1239 -140V-700H1095V-152C1095 -137 1090 -132 1075 -132H879C864 -132 859 -137 859 -152V-700H715V-140C715 -45 760 0 855 0ZM1390 0H1534V-247H1650L1766 0H1921L1802 -255C1868 -267 1899 -312 1899 -391V-560C1899 -655 1854 -700 1759 -700H1390ZM1534 -375V-570H1735C1750 -570 1755 -565 1755 -550V-395C1755 -380 1750 -375 1735 -375ZM1977 0H2129L2172 -152H2412L2455 0H2613L2400 -700H2190ZM2209 -284 2292 -578 2375 -284ZM2817 0H3049C3144 0 3189 -45 3189 -140V-254H3045V-152C3045 -137 3040 -132 3025 -132H2841C2826 -132 2821 -137 2821 -152V-548C2821 -563 2826 -568 2841 -568H3025C3040 -568 3045 -563 3045 -548V-446H3189V-560C3189 -655 3144 -700 3049 -700H2817C2722 -700 2677 -655 2677 -560V-140C2677 -45 2722 0 2817 0ZM3440 0H3697C3792 0 3837 -45 3837 -140V-560C3837 -655 3792 -700 3697 -700H3440C3345 -700 3300 -655 3300 -560V-140C3300 -45 3345 0 3440 0ZM3444 -152V-548C3444 -563 3449 -568 3464 -568H3673C3688 -568 3693 -563 3693 -548V-152C3693 -137 3688 -132 3673 -132H3464C3449 -132 3444 -137 3444 -152Z"/></svg><span class="sr">Buraco</span></span></span><span class="p-s">STBL e Aberto</span></div>
+    <div class="gc" style="--c:#2cc160"><img src="assets/icons/tranca.webp" alt=""><span class="ttl"><span class="ol" data-em="3.8470"><svg viewBox="25 -700 3847 700" style="--em:3.8470" aria-hidden="true" focusable="false"><path fill="currentColor" d="M215 0H359V-570H549V-700H25V-570H215ZM653 0H797V-247H913L1029 0H1184L1065 -255C1131 -267 1162 -312 1162 -391V-560C1162 -655 1117 -700 1022 -700H653ZM797 -375V-570H998C1013 -570 1018 -565 1018 -550V-395C1018 -380 1013 -375 998 -375ZM1240 0H1392L1435 -152H1675L1718 0H1876L1663 -700H1453ZM1472 -284 1555 -578 1638 -284ZM1971 0H2111V-467L2386 0H2526V-700H2386V-249L2121 -700H1971ZM2807 0H3039C3134 0 3179 -45 3179 -140V-254H3035V-152C3035 -137 3030 -132 3015 -132H2831C2816 -132 2811 -137 2811 -152V-548C2811 -563 2816 -568 2831 -568H3015C3030 -568 3035 -563 3035 -548V-446H3179V-560C3179 -655 3134 -700 3039 -700H2807C2712 -700 2667 -655 2667 -560V-140C2667 -45 2712 0 2807 0ZM3236 0H3388L3431 -152H3671L3714 0H3872L3659 -700H3449ZM3468 -284 3551 -578 3634 -284Z"/></svg><span class="sr">Tranca</span></span></span><span class="p-s">2.000 pontos</span></div>
+    <div class="gc" style="--c:#8752f2"><img src="assets/icons/cacheta.webp" alt=""><span class="ttl"><span class="ol" data-em="4.2680"><svg viewBox="62 -700 4268 700" style="--em:4.2680" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H434C529 0 574 -45 574 -140V-254H430V-152C430 -137 425 -132 410 -132H226C211 -132 206 -137 206 -152V-548C206 -563 211 -568 226 -568H410C425 -568 430 -563 430 -548V-446H574V-560C574 -655 529 -700 434 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM631 0H783L826 -152H1066L1109 0H1267L1054 -700H844ZM863 -284 946 -578 1029 -284ZM1471 0H1703C1798 0 1843 -45 1843 -140V-254H1699V-152C1699 -137 1694 -132 1679 -132H1495C1480 -132 1475 -137 1475 -152V-548C1475 -563 1480 -568 1495 -568H1679C1694 -568 1699 -563 1699 -548V-446H1843V-560C1843 -655 1798 -700 1703 -700H1471C1376 -700 1331 -655 1331 -560V-140C1331 -45 1376 0 1471 0ZM1971 0H2115V-292H2363V0H2507V-700H2363V-424H2115V-700H1971ZM2665 0H3136V-132H2809V-293H3074V-423H2809V-568H3136V-700H2665ZM3399 0H3543V-570H3733V-700H3209V-570H3399ZM3694 0H3846L3889 -152H4129L4172 0H4330L4117 -700H3907ZM3926 -284 4009 -578 4092 -284Z"/></svg><span class="sr">Cacheta</span></span></span><span class="p-s">2 a 5 jogadores</span></div>
+    <div class="gc" style="--c:#f76b15"><img src="assets/icons/cacheta.webp" alt="" style="filter:hue-rotate(200deg)"><span class="ttl"><span class="ol" data-em="4.8690"><svg viewBox="62 -700 4869 700" style="--em:4.8690" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H434C529 0 574 -45 574 -140V-254H430V-152C430 -137 425 -132 410 -132H226C211 -132 206 -137 206 -152V-548C206 -563 211 -568 226 -568H410C425 -568 430 -563 430 -548V-446H574V-560C574 -655 529 -700 434 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM631 0H783L826 -152H1066L1109 0H1267L1054 -700H844ZM863 -284 946 -578 1029 -284ZM1471 0H1703C1798 0 1843 -45 1843 -140V-254H1699V-152C1699 -137 1694 -132 1679 -132H1495C1480 -132 1475 -137 1475 -152V-548C1475 -563 1480 -568 1495 -568H1679C1694 -568 1699 -563 1699 -548V-446H1843V-560C1843 -655 1798 -700 1703 -700H1471C1376 -700 1331 -655 1331 -560V-140C1331 -45 1376 0 1471 0ZM1971 0H2115V-292H2363V0H2507V-700H2363V-424H2115V-700H1971ZM2665 0H3136V-132H2809V-293H3074V-423H2809V-568H3136V-700H2665ZM3399 0H3543V-570H3733V-700H3209V-570H3399ZM3694 0H3846L3889 -152H4129L4172 0H4330L4117 -700H3907ZM3851 -764H3925V-783C3925 -800 3934 -804 3948 -804C3990 -804 4042 -758 4097 -758C4143 -758 4175 -793 4175 -870V-895H4099V-876C4099 -862 4092 -855 4078 -855C4036 -855 3995 -901 3935 -901C3889 -901 3851 -866 3851 -789ZM3926 -284 4009 -578 4092 -284ZM4534 0H4791C4886 0 4931 -45 4931 -140V-560C4931 -655 4886 -700 4791 -700H4534C4439 -700 4394 -655 4394 -560V-140C4394 -45 4439 0 4534 0ZM4538 -152V-548C4538 -563 4543 -568 4558 -568H4767C4782 -568 4787 -563 4787 -548V-152C4787 -137 4782 -132 4767 -132H4558C4543 -132 4538 -137 4538 -152Z"/></svg><span class="sr">Cachetão</span></span></span><span class="p-s">Mesas de 4 a 10</span></div>
+    <div class="gc" style="--c:#3b74f5"><img src="assets/icons/crown.webp" alt=""><span class="ttl"><span class="ol" data-em="2.4440"><svg viewBox="62 -700 2444 700" style="--em:2.4440" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H434C529 0 574 -45 574 -140V-254H430V-152C430 -137 425 -132 410 -132H226C211 -132 206 -137 206 -152V-548C206 -563 211 -568 226 -568H410C425 -568 430 -563 430 -548V-446H574V-560C574 -655 529 -700 434 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM825 0H1082C1177 0 1222 -45 1222 -140V-560C1222 -655 1177 -700 1082 -700H825C730 -700 685 -655 685 -560V-140C685 -45 730 0 825 0ZM829 -152V-548C829 -563 834 -568 849 -568H1058C1073 -568 1078 -563 1078 -548V-152C1078 -137 1073 -132 1058 -132H849C834 -132 829 -137 829 -152ZM1486 0H1718C1813 0 1858 -45 1858 -140V-254H1714V-152C1714 -137 1709 -132 1694 -132H1510C1495 -132 1490 -137 1490 -152V-548C1490 -563 1495 -568 1510 -568H1694C1709 -568 1714 -563 1714 -548V-446H1858V-560C1858 -655 1813 -700 1718 -700H1486C1391 -700 1346 -655 1346 -560V-140C1346 -45 1391 0 1486 0ZM2109 0H2366C2461 0 2506 -45 2506 -140V-560C2506 -655 2461 -700 2366 -700H2109C2014 -700 1969 -655 1969 -560V-140C1969 -45 2014 0 2109 0ZM2113 -152V-548C2113 -563 2118 -568 2133 -568H2342C2357 -568 2362 -563 2362 -548V-152C2362 -137 2357 -132 2342 -132H2133C2118 -132 2113 -137 2113 -152Z"/></svg><span class="sr">Coco</span></span></span><span class="p-s">1 vence tudo</span></div>
+  </div>
+  <div class="wrap">
+    <div class="bento" data-stop="120">
+      <div class="bx c4 has-shot rv"><p class="h3">Partida rápida</p><p class="p-m">Escolhe o valor, toca em jogar e a mesa fecha em segundos.</p><img class="shot" src="assets/app/lobby.webp" alt=""></div>
+      <div class="bx c4 has-shot rv" style="--d:.1s"><p class="h3">Batalhas</p><p class="p-m">Séries de partidas com prêmio, abertas ou com senha.</p><img class="shot" src="assets/app/batalhas.webp" alt=""></div>
+      <div class="bx c4 has-shot rv" style="--d:.2s"><p class="h3">Chat ao vivo e ranking</p><p class="p-m">A comunidade jogando junto, com ranking por jogo.</p><img class="shot" src="assets/app/chat.webp" alt=""></div>
+      <div class="bx c3 rv"><p class="h3">Loja de personagens</p><p class="p-m">Skins, baralhos e mesas temáticas.</p><img class="art" src="assets/eg/pack.webp" alt=""></div>
+      <div class="bx c3 rv" style="--d:.1s"><p class="h3">Fichas por PIX</p><p class="p-m">Compra e saque direto no app.</p>
+        <div class="amt"><div class="row"><span>Compra de fichas · PIX</span><b>R$ 50,00</b></div><div class="row"><span>Saque do prêmio · PIX</span><b class="ok">Pronto</b></div></div>
+      </div>
+      <div class="bx c6 wide rv" style="--d:.2s"><div><p class="h3">Celular e computador</p><p class="p-m">O jogador joga onde estiver. No computador, o jogo fica no centro, com menu e chat ao lado.</p></div><img src="assets/app/desktop.webp" alt="EstrelaGames no computador"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · FEITO PRA VOLTAR -->
+<section class="sec light" id="retorno" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>06</b><i></i>Feito pra voltar</p>
+    <div class="head">
+      <h2 class="ttl l rv"><span class="ol" data-em="9.1490"><svg viewBox="79 -700 9149 700" style="--em:9.1490" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-287H488V-417H223V-568H550V-700H79ZM659 0H1130V-132H803V-293H1068V-423H803V-568H1130V-700H659ZM1257 0H1401V-700H1257ZM1695 0H1839V-570H2029V-700H1505V-570H1695ZM2244 0H2501C2596 0 2641 -45 2641 -140V-560C2641 -655 2596 -700 2501 -700H2244C2149 -700 2104 -655 2104 -560V-140C2104 -45 2149 0 2244 0ZM2248 -152V-548C2248 -563 2253 -568 2268 -568H2477C2492 -568 2497 -563 2497 -548V-152C2497 -137 2492 -132 2477 -132H2268C2253 -132 2248 -137 2248 -152ZM3022 0H3166V-234H3392C3487 -234 3532 -279 3532 -374V-560C3532 -655 3487 -700 3392 -700H3022ZM3166 -366V-568H3368C3383 -568 3388 -563 3388 -548V-386C3388 -371 3383 -366 3368 -366ZM3540 0H3692L3735 -152H3975L4018 0H4176L3963 -700H3753ZM3772 -284 3855 -578 3938 -284ZM4271 0H4415V-247H4531L4647 0H4802L4683 -255C4749 -267 4780 -312 4780 -391V-560C4780 -655 4735 -700 4640 -700H4271ZM4415 -375V-570H4616C4631 -570 4636 -565 4636 -550V-395C4636 -380 4631 -375 4616 -375ZM4858 0H5010L5053 -152H5293L5336 0H5494L5281 -700H5071ZM5090 -284 5173 -578 5256 -284ZM5949 0H6117L6334 -700H6180L6035 -159L5890 -700H5732ZM6542 0H6799C6894 0 6939 -45 6939 -140V-560C6939 -655 6894 -700 6799 -700H6542C6447 -700 6402 -655 6402 -560V-140C6402 -45 6447 0 6542 0ZM6546 -152V-548C6546 -563 6551 -568 6566 -568H6775C6790 -568 6795 -563 6795 -548V-152C6795 -137 6790 -132 6775 -132H6566C6551 -132 6546 -137 6546 -152ZM7080 0H7526V-132H7224V-700H7080ZM7671 0H7815V-570H8005V-700H7481V-570H7671ZM7966 0H8118L8161 -152H8401L8444 0H8602L8389 -700H8179ZM8198 -284 8281 -578 8364 -284ZM8697 0H8841V-247H8957L9073 0H9228L9109 -255C9175 -267 9206 -312 9206 -391V-560C9206 -655 9161 -700 9066 -700H8697ZM8841 -375V-570H9042C9057 -570 9062 -565 9062 -550V-395C9062 -380 9057 -375 9042 -375Z"/></svg><span class="sr">Feito para voltar</span></span><span class="ol brand" data-em="4.5900"><svg viewBox="25 -700 4590 700" style="--em:4.5900" aria-hidden="true" focusable="false"><path fill="currentColor" d="M215 0H359V-570H549V-700H25V-570H215ZM764 0H1021C1116 0 1161 -45 1161 -140V-560C1161 -655 1116 -700 1021 -700H764C669 -700 624 -655 624 -560V-140C624 -45 669 0 764 0ZM768 -152V-548C768 -563 773 -568 788 -568H997C1012 -568 1017 -563 1017 -548V-152C1017 -137 1012 -132 997 -132H788C773 -132 768 -137 768 -152ZM1302 0H1685C1780 0 1825 -45 1825 -140V-560C1825 -655 1780 -700 1685 -700H1302ZM1446 -132V-568H1661C1676 -568 1681 -563 1681 -548V-152C1681 -137 1676 -132 1661 -132ZM2089 0H2346C2441 0 2486 -45 2486 -140V-560C2486 -655 2441 -700 2346 -700H2089C1994 -700 1949 -655 1949 -560V-140C1949 -45 1994 0 2089 0ZM2093 -152V-548C2093 -563 2098 -568 2113 -568H2322C2337 -568 2342 -563 2342 -548V-152C2342 -137 2337 -132 2322 -132H2113C2098 -132 2093 -137 2093 -152ZM2867 0H3250C3345 0 3390 -45 3390 -140V-560C3390 -655 3345 -700 3250 -700H2867ZM3011 -132V-568H3226C3241 -568 3246 -563 3246 -548V-152C3246 -137 3241 -132 3226 -132ZM3531 0H3675V-700H3531ZM3770 0H3922L3965 -152H4205L4248 0H4406L4193 -700H3983ZM4002 -284 4085 -578 4168 -284ZM4455 0H4615V-156H4455Z"/></svg><span class="sr">todo dia.</span></span></h2>
+      <p class="lead rv" style="--d:.15s">Jogador que volta joga mais mesas. E cada mesa dos seus indicados rende para você.</p>
+    </div>
+    <div class="rows">
+      <div class="rw rv"><span class="ttl"><span class="ol" data-em="0.9020"><svg viewBox="62 -700 902 700" style="--em:0.9020" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM820 0H964V-700H850L679 -624V-504L820 -550Z"/></svg><span class="sr">01</span></span></span><p class="h3">Zero tutorial</p><p class="p-l">Baralho todo mundo já sabe jogar.</p></div>
+      <div class="rw rv"><span class="ttl"><span class="ol" data-em="1.1310"><svg viewBox="62 -700 1131 700" style="--em:1.1310" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM701 -236V0H1193V-132H845V-204C845 -230 859 -234 885 -244L1047 -304C1132 -335 1191 -368 1191 -448V-560C1191 -655 1146 -700 1051 -700H849C754 -700 709 -655 709 -560V-482H849V-548C849 -563 854 -568 869 -568H1027C1042 -568 1047 -563 1047 -548V-480C1047 -454 1033 -450 1007 -440L845 -380C760 -349 701 -316 701 -236Z"/></svg><span class="sr">02</span></span></span><p class="h3">Competição</p><p class="p-l">Batalhas entre amigos e ranking por jogo.</p></div>
+      <div class="rw rv"><span class="ttl"><span class="ol" data-em="1.1330"><svg viewBox="62 -700 1133 700" style="--em:1.1330" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM831 0H1055C1150 0 1195 -45 1195 -140V-250C1195 -299 1174 -336 1124 -358C1170 -383 1187 -417 1187 -466V-560C1187 -655 1142 -700 1047 -700H839C744 -700 699 -655 699 -560V-484H843V-550C843 -565 848 -570 863 -570H1023C1038 -570 1043 -565 1043 -550V-442C1043 -427 1038 -422 1023 -422H864V-294H1031C1046 -294 1051 -289 1051 -274V-150C1051 -135 1046 -130 1031 -130H855C840 -130 835 -135 835 -150V-216H691V-140C691 -45 736 0 831 0Z"/></svg><span class="sr">03</span></span></span><p class="h3">Identidade</p><p class="p-l">O personagem e a skin que o jogador escolhe e exibe.</p></div>
+      <div class="rw rv"><span class="ttl"><span class="ol" data-em="1.1940"><svg viewBox="62 -700 1194 700" style="--em:1.1940" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM1015 0H1155V-144H1256V-272H1155V-700H1023L665 -262L695 -144H1015ZM841 -272 1015 -491V-272Z"/></svg><span class="sr">04</span></span></span><p class="h3">Encontro marcado</p><p class="p-l">Batalhas com prêmio, toda semana.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · POR QUE -->
+<section class="sec" id="porque" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>07</b><i></i>Por que o EstrelaGames</p>
+    <h2 class="ttl l rv"><span class="olrow"><span class="ol" data-em="4.8520"><svg viewBox="79 -700 4852 700" style="--em:4.8520" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-234H449C544 -234 589 -279 589 -374V-560C589 -655 544 -700 449 -700H79ZM223 -366V-568H425C440 -568 445 -563 445 -548V-386C445 -371 440 -366 425 -366ZM828 0H1085C1180 0 1225 -45 1225 -140V-560C1225 -655 1180 -700 1085 -700H828C733 -700 688 -655 688 -560V-140C688 -45 733 0 828 0ZM832 -152V-548C832 -563 837 -568 852 -568H1061C1076 -568 1081 -563 1081 -548V-152C1081 -137 1076 -132 1061 -132H852C837 -132 832 -137 832 -152ZM1366 0H1510V-247H1626L1742 0H1897L1778 -255C1844 -267 1875 -312 1875 -391V-560C1875 -655 1830 -700 1735 -700H1366ZM1510 -375V-570H1711C1726 -570 1731 -565 1731 -550V-395C1731 -380 1726 -375 1711 -375ZM2430 128H2574V0H2624C2719 0 2764 -45 2764 -140V-560C2764 -655 2719 -700 2624 -700H2379C2284 -700 2239 -655 2239 -560V-140C2239 -45 2284 0 2379 0H2430ZM2383 -152V-548C2383 -563 2388 -568 2403 -568H2600C2615 -568 2620 -563 2620 -548V-152C2620 -137 2615 -132 2600 -132H2403C2388 -132 2383 -137 2383 -152ZM3038 0H3282C3377 0 3422 -45 3422 -140V-700H3278V-152C3278 -137 3273 -132 3258 -132H3062C3047 -132 3042 -137 3042 -152V-700H2898V-140C2898 -45 2943 0 3038 0ZM3573 0H4044V-132H3717V-293H3982V-423H3717V-568H4044V-700H3573ZM4534 0H4791C4886 0 4931 -45 4931 -140V-560C4931 -655 4886 -700 4791 -700H4534C4439 -700 4394 -655 4394 -560V-140C4394 -45 4439 0 4534 0ZM4538 -152V-548C4538 -563 4543 -568 4558 -568H4767C4782 -568 4787 -563 4787 -548V-152C4787 -137 4782 -132 4767 -132H4558C4543 -132 4538 -137 4538 -152Z"/></svg><span class="sr">Por que o</span></span><span class="ol grad" data-em="7.7190"><svg viewBox="79 -700 7719 700" style="--em:7.7190" aria-hidden="true" focusable="false"><defs><linearGradient id="olg31" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg31)" d="M79 0H550V-132H223V-293H488V-423H223V-568H550V-700H79ZM788 0H1018C1113 0 1158 -45 1158 -140V-256C1158 -346 1102 -381 1014 -400L828 -440C802 -446 794 -452 794 -474V-550C794 -565 799 -570 814 -570H986C1001 -570 1006 -565 1006 -550V-480H1146V-560C1146 -655 1101 -700 1006 -700H790C695 -700 650 -655 650 -560V-452C650 -362 706 -327 794 -308L980 -268C1006 -262 1014 -256 1014 -234V-150C1014 -135 1009 -130 994 -130H808C793 -130 788 -135 788 -150V-228H648V-140C648 -45 693 0 788 0ZM1421 0H1565V-570H1755V-700H1231V-570H1421ZM1859 0H2003V-247H2119L2235 0H2390L2271 -255C2337 -267 2368 -312 2368 -391V-560C2368 -655 2323 -700 2228 -700H1859ZM2003 -375V-570H2204C2219 -570 2224 -565 2224 -550V-395C2224 -380 2219 -375 2204 -375ZM2509 0H2980V-132H2653V-293H2918V-423H2653V-568H2980V-700H2509ZM3107 0H3553V-132H3251V-700H3107ZM3599 0H3751L3794 -152H4034L4077 0H4235L4022 -700H3812ZM3831 -284 3914 -578 3997 -284ZM4439 0H4680C4775 0 4820 -45 4820 -140V-386H4544V-260H4676V-152C4676 -137 4671 -132 4656 -132H4463C4448 -132 4443 -137 4443 -152V-548C4443 -563 4448 -568 4463 -568H4656C4671 -568 4676 -563 4676 -548V-468H4820V-560C4820 -655 4775 -700 4680 -700H4439C4344 -700 4299 -655 4299 -560V-140C4299 -45 4344 0 4439 0ZM4887 0H5039L5082 -152H5322L5365 0H5523L5310 -700H5100ZM5119 -284 5202 -578 5285 -284ZM5618 0H5756V-446L5907 -93H6013L6164 -446V0H6306V-700H6148L5962 -288L5776 -700H5618ZM6464 0H6935V-132H6608V-293H6873V-423H6608V-568H6935V-700H6464ZM7173 0H7403C7498 0 7543 -45 7543 -140V-256C7543 -346 7487 -381 7399 -400L7213 -440C7187 -446 7179 -452 7179 -474V-550C7179 -565 7184 -570 7199 -570H7371C7386 -570 7391 -565 7391 -550V-480H7531V-560C7531 -655 7486 -700 7391 -700H7175C7080 -700 7035 -655 7035 -560V-452C7035 -362 7091 -327 7179 -308L7365 -268C7391 -262 7399 -256 7399 -234V-150C7399 -135 7394 -130 7379 -130H7193C7178 -130 7173 -135 7173 -150V-228H7033V-140C7033 -45 7078 0 7173 0ZM7638 0H7798V-156H7638Z"/></svg><span class="sr">EstrelaGames.</span></span></span></h2>
+    <div class="why">
+      <div class="wy big rv"><span class="lbl">Da taxa das mesas dos seus indicados</span><span class="ttl"><span class="ol" data-em="1.8360"><svg viewBox="22 -700 1836 700" style="--em:1.8360" aria-hidden="true" focusable="false"><path fill="currentColor" d="M372 0H512V-144H613V-272H512V-700H380L22 -262L52 -144H372ZM198 -272 372 -491V-272ZM837 0H1076C1171 0 1216 -45 1216 -140V-560C1216 -655 1171 -700 1076 -700H837C742 -700 697 -655 697 -560V-140C697 -45 742 0 837 0ZM841 -152V-548C841 -563 846 -568 861 -568H1052C1067 -568 1072 -563 1072 -548V-152C1072 -137 1067 -132 1052 -132H861C846 -132 841 -137 841 -152ZM1368 0H1484L1808 -700H1692ZM1318 -494C1318 -445 1339 -424 1388 -424H1474C1524 -424 1544 -444 1544 -494V-630C1544 -680 1524 -700 1474 -700H1388C1338 -700 1318 -680 1318 -630ZM1391 -510V-614C1391 -628 1395 -632 1409 -632H1453C1467 -632 1471 -628 1471 -614V-510C1471 -496 1467 -492 1453 -492H1409C1395 -492 1391 -496 1391 -510ZM1632 -70C1632 -21 1653 0 1702 0H1788C1838 0 1858 -20 1858 -70V-206C1858 -256 1838 -276 1788 -276H1702C1652 -276 1632 -256 1632 -206ZM1705 -86V-190C1705 -204 1709 -208 1723 -208H1767C1781 -208 1785 -204 1785 -190V-86C1785 -72 1781 -68 1767 -68H1723C1709 -68 1705 -72 1705 -86Z"/></svg><span class="sr">40%</span></span><span class="ol" data-em="4.5290"><svg viewBox="79 -700 4529 700" style="--em:4.5290" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-234H449C544 -234 589 -279 589 -374V-560C589 -655 544 -700 449 -700H79ZM223 -366V-568H425C440 -568 445 -563 445 -548V-386C445 -371 440 -366 425 -366ZM705 0H849V-247H965L1081 0H1236L1117 -255C1183 -267 1214 -312 1214 -391V-560C1214 -655 1169 -700 1074 -700H705ZM849 -375V-570H1050C1065 -570 1070 -565 1070 -550V-395C1070 -380 1065 -375 1050 -375ZM1292 0H1444L1487 -152H1727L1770 0H1928L1715 -700H1505ZM1524 -284 1607 -578 1690 -284ZM2383 0H2551L2768 -700H2614L2469 -159L2324 -700H2166ZM2976 0H3233C3328 0 3373 -45 3373 -140V-560C3373 -655 3328 -700 3233 -700H2976C2881 -700 2836 -655 2836 -560V-140C2836 -45 2881 0 2976 0ZM2980 -152V-548C2980 -563 2985 -568 3000 -568H3209C3224 -568 3229 -563 3229 -548V-152C3229 -137 3224 -132 3209 -132H3000C2985 -132 2980 -137 2980 -152ZM3637 0H3869C3964 0 4009 -45 4009 -140V-254H3865V-152C3865 -137 3860 -132 3845 -132H3661C3646 -132 3641 -137 3641 -152V-548C3641 -563 3646 -568 3661 -568H3845C3860 -568 3865 -563 3865 -548V-446H4009V-560C4009 -655 3964 -700 3869 -700H3637C3542 -700 3497 -655 3497 -560V-140C3497 -45 3542 0 3637 0ZM4137 0H4608V-132H4281V-293H4546V-423H4281V-568H4608V-700H4137ZM4185 -766H4314L4375 -829L4436 -766H4565L4435 -896H4315Z"/></svg><span class="sr">pra você</span></span></span></div>
+      <div class="wy rv" style="--d:.06s"><img src="assets/icons/fire.webp" alt=""><p class="h4">Mesas cheias</p><p class="p-s">A nossa base de jogadores volta a jogar no produto novo.</p></div>
+      <div class="wy rv" style="--d:.12s"><img src="assets/icons/gift.webp" alt=""><p class="h4">R$ 5 de bônus</p><p class="p-s">Para os 30 mil primeiros jogadores começarem.</p></div>
+      <div class="wy rv" style="--d:.18s"><img src="assets/icons/truco.webp" alt=""><p class="h4">Jogo que todo mundo sabe</p><p class="p-s">Truco, cacheta, buraco e tranca.</p></div>
+      <div class="wy rv" style="--d:.24s"><img src="assets/icons/globe.webp" alt=""><p class="h4">Celular e computador</p><p class="p-s">O jogador joga onde estiver.</p></div>
+      <div class="wy rv"><img src="assets/icons/swords.webp" alt=""><p class="h4">Jogo de habilidade</p><p class="p-s">Entre jogadores. A casa não joga contra ninguém.</p></div>
+      <div class="wy rv" style="--d:.06s"><span class="bn">5% a 10%</span><p class="h4">Taxa por mesa</p><p class="p-s">Conforme o jogo e o valor da mesa.</p></div>
+      <div class="wy rv" style="--d:.12s"><img src="assets/icons/trophy.webp" alt=""><p class="h4">Ganhe quem ganhar</p><p class="p-s">Toda mesa paga a taxa, e 40% é seu.</p></div>
+      <div class="wy rv" style="--d:.18s"><img src="assets/icons/wallet.webp" alt=""><p class="h4">Compra e saque por PIX</p><p class="p-s">Fichas e prêmios direto no app.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · OS NÚMEROS -->
+<section class="sec light" id="numeros" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>08</b><i></i>Os números</p>
+    <div class="head">
+      <h2 class="ttl l rv"><span class="ol" data-em="6.2360"><svg viewBox="62 -700 6236 700" style="--em:6.2360" aria-hidden="true" focusable="false"><path fill="currentColor" d="M253 128H397V0H447C542 0 587 -45 587 -140V-560C587 -655 542 -700 447 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0H253ZM206 -152V-548C206 -563 211 -568 226 -568H423C438 -568 443 -563 443 -548V-152C443 -137 438 -132 423 -132H226C211 -132 206 -137 206 -152ZM861 0H1105C1200 0 1245 -45 1245 -140V-700H1101V-152C1101 -137 1096 -132 1081 -132H885C870 -132 865 -137 865 -152V-700H721V-140C721 -45 766 0 861 0ZM1321 0H1473L1516 -152H1756L1799 0H1957L1744 -700H1534ZM1553 -284 1636 -578 1719 -284ZM2052 0H2192V-467L2467 0H2607V-700H2467V-249L2202 -700H2052ZM2901 0H3045V-570H3235V-700H2711V-570H2901ZM3450 0H3707C3802 0 3847 -45 3847 -140V-560C3847 -655 3802 -700 3707 -700H3450C3355 -700 3310 -655 3310 -560V-140C3310 -45 3355 0 3450 0ZM3454 -152V-548C3454 -563 3459 -568 3474 -568H3683C3698 -568 3703 -563 3703 -548V-152C3703 -137 3698 -132 3683 -132H3474C3459 -132 3454 -137 3454 -152ZM4228 0H4372V-287H4637V-417H4372V-568H4699V-700H4228ZM4808 0H4952V-700H4808ZM5233 0H5465C5560 0 5605 -45 5605 -140V-254H5461V-152C5461 -137 5456 -132 5441 -132H5257C5242 -132 5237 -137 5237 -152V-548C5237 -563 5242 -568 5257 -568H5441C5456 -568 5461 -563 5461 -548V-446H5605V-560C5605 -655 5560 -700 5465 -700H5233C5138 -700 5093 -655 5093 -560V-140C5093 -45 5138 0 5233 0ZM5662 0H5814L5857 -152H6097L6140 0H6298L6085 -700H5875ZM5894 -284 5977 -578 6060 -284Z"/></svg><span class="sr">Quanto fica</span></span><span class="ol brand" data-em="5.0030"><svg viewBox="62 -700 5003 700" style="--em:5.0030" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H434C529 0 574 -45 574 -140V-254H430V-152C430 -137 425 -132 410 -132H226C211 -132 206 -137 206 -152V-548C206 -563 211 -568 226 -568H410C425 -568 430 -563 430 -548V-446H574V-560C574 -655 529 -700 434 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM825 0H1082C1177 0 1222 -45 1222 -140V-560C1222 -655 1177 -700 1082 -700H825C730 -700 685 -655 685 -560V-140C685 -45 730 0 825 0ZM829 -152V-548C829 -563 834 -568 849 -568H1058C1073 -568 1078 -563 1078 -548V-152C1078 -137 1073 -132 1058 -132H849C834 -132 829 -137 829 -152ZM1363 0H1501V-446L1652 -93H1758L1909 -446V0H2051V-700H1893L1707 -288L1521 -700H1363ZM2587 0H2755L2972 -700H2818L2673 -159L2528 -700H2370ZM3180 0H3437C3532 0 3577 -45 3577 -140V-560C3577 -655 3532 -700 3437 -700H3180C3085 -700 3040 -655 3040 -560V-140C3040 -45 3085 0 3180 0ZM3184 -152V-548C3184 -563 3189 -568 3204 -568H3413C3428 -568 3433 -563 3433 -548V-152C3433 -137 3428 -132 3413 -132H3204C3189 -132 3184 -137 3184 -152ZM3841 0H4073C4168 0 4213 -45 4213 -140V-254H4069V-152C4069 -137 4064 -132 4049 -132H3865C3850 -132 3845 -137 3845 -152V-548C3845 -563 3850 -568 3865 -568H4049C4064 -568 4069 -563 4069 -548V-446H4213V-560C4213 -655 4168 -700 4073 -700H3841C3746 -700 3701 -655 3701 -560V-140C3701 -45 3746 0 3841 0ZM4341 0H4812V-132H4485V-293H4750V-423H4485V-568H4812V-700H4341ZM4389 -766H4518L4579 -829L4640 -766H4769L4639 -896H4519ZM4905 0H5065V-156H4905Z"/></svg><span class="sr">com você.</span></span></h2>
+      <p class="lead rv" style="--d:.15s">Toda mesa paga uma taxa sobre o pote. Das mesas dos seus indicados, 40% dessa taxa é sua.</p>
+    </div>
+    <div class="plans">
+      <div class="plan feat rv"><span class="badge">Seu ganho</span><span class="lbl">Você recebe</span><p class="price">40%</p><p class="per">da taxa das mesas dos seus indicados</p>
+        <div class="split-bar" aria-hidden="true"><i style="flex:40"></i><i style="flex:60"></i></div>
+        <ul><li><span><svg><use href="#i-check"/></svg>Em todos os jogos da tabela</span></li><li><span><svg><use href="#i-check"/></svg>Ganhe quem ganhar a partida</span></li><li><span><svg><use href="#i-check"/></svg>Em cada mesa que eles jogarem</span></li></ul>
+        <p class="fine">As condições do programa valem como formalizadas no contrato de afiliado.</p></div>
+      <div class="plan rv" style="--d:.1s"><span class="lbl">Bônus de boas-vindas</span><p class="price">R$ 5</p><p class="per">para os 30 mil primeiros jogadores</p>
+        <ul><li><span><svg><use href="#i-check"/></svg>Seu indicado começa jogando</span></li><li><span><svg><use href="#i-check"/></svg>Mais conversão no seu link</span></li><li><span><svg><use href="#i-check"/></svg>Até completar os 30 mil</span></li></ul></div>
+      <div class="plan rv" style="--d:.2s"><span class="lbl">Taxa por mesa</span><p class="price">5% a 10%</p><p class="per">do pote, conforme o jogo e o valor</p>
+        <ul><li><span>Cacheta, buraco e tranca</span><b>10%</b></li><li><span>Pif Paf</span><b>6% a 7%</b></li><li><span>Truco</span><b>5% a 7%</b></li></ul>
+        <p class="fine">Tabela completa logo abaixo.</p></div>
+    </div>
+
+    <p class="lbl tx-h rv" data-stop="120">Tabela de taxas</p>
+    <div class="tx-top">
+      <div class="tg rv"><div class="tg-h"><img src="assets/icons/truco.webp" alt=""><b>Truco Paulista e Mineiro</b></div>
+        <table><tr><th>Valor da mesa</th><th>1x1</th><th>2x2</th></tr>
+          <tr><td>Até R$ 100</td><td><b>7%</b></td><td><b>6%</b></td></tr>
+          <tr><td>Acima de R$ 100</td><td><b>6%</b></td><td><b>5%</b></td></tr></table></div>
+      <div class="tg rv" style="--d:.08s"><div class="tg-h"><img src="assets/icons/cacheta.webp" alt="" style="filter:hue-rotate(40deg)"><b>Pif Paf</b></div>
+        <table><tr><th>Valor da mesa</th><th>Taxa</th></tr>
+          <tr><td>Até R$ 100</td><td><b>7%</b></td></tr>
+          <tr><td>Acima de R$ 100</td><td><b>6%</b></td></tr></table></div>
+    </div>
+    <div class="tx-row">
+      <div class="tg rv"><div class="tg-h"><img src="assets/icons/cacheta.webp" alt=""><b>Cacheta</b></div><p class="meta">Todas as mesas</p><p class="rt">10%</p></div>
+      <div class="tg rv"><div class="tg-h"><img src="assets/icons/cacheta.webp" alt="" style="filter:hue-rotate(200deg)"><b>Cachetão</b></div><p class="meta">Mesas de 4, 5, 6, 9 e 10 lugares</p><p class="rt">10%</p></div>
+      <div class="tg rv"><div class="tg-h"><img src="assets/icons/crown.webp" alt=""><b>Cachetão Coco</b></div><p class="meta">1 vence tudo · mesas de 6 e 10 lugares</p><p class="rt">10%</p></div>
+      <div class="tg rv"><div class="tg-h"><img src="assets/icons/buraco.webp" alt=""><b>Buraco</b></div><p class="meta">STBL e Aberto · 2.000 pontos</p><p class="rt">10%</p></div>
+      <div class="tg rv"><div class="tg-h"><img src="assets/icons/tranca.webp" alt=""><b>Tranca</b></div><p class="meta">2.000 pontos</p><p class="rt">10%</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 · A CONTA -->
+<section class="sec" id="conta" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>09</b><i></i>A conta</p>
+    <div class="head">
+      <h2 class="ttl l rv"><span class="olrow"><span class="ol" data-em="6.6200"><svg viewBox="79 -700 6620 700" style="--em:6.6200" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-287H488V-417H223V-568H550V-700H79ZM541 0H693L736 -152H976L1019 0H1177L964 -700H754ZM773 -284 856 -578 939 -284ZM1381 0H1452V62C1452 77 1447 82 1432 82H1329L1379 160H1462C1524 160 1556 140 1556 66V0H1613C1708 0 1753 -45 1753 -140V-254H1609V-152C1609 -137 1604 -132 1589 -132H1405C1390 -132 1385 -137 1385 -152V-548C1385 -563 1390 -568 1405 -568H1589C1604 -568 1609 -563 1609 -548V-446H1753V-560C1753 -655 1708 -700 1613 -700H1381C1286 -700 1241 -655 1241 -560V-140C1241 -45 1286 0 1381 0ZM1810 0H1962L2005 -152H2245L2288 0H2446L2233 -700H2023ZM2042 -284 2125 -578 2208 -284ZM2682 0H2834L2877 -152H3117L3160 0H3318L3105 -700H2895ZM2914 -284 2997 -578 3080 -284ZM3758 0H3990C4085 0 4130 -45 4130 -140V-254H3986V-152C3986 -137 3981 -132 3966 -132H3782C3767 -132 3762 -137 3762 -152V-548C3762 -563 3767 -568 3782 -568H3966C3981 -568 3986 -563 3986 -548V-446H4130V-560C4130 -655 4085 -700 3990 -700H3758C3663 -700 3618 -655 3618 -560V-140C3618 -45 3663 0 3758 0ZM4381 0H4638C4733 0 4778 -45 4778 -140V-560C4778 -655 4733 -700 4638 -700H4381C4286 -700 4241 -655 4241 -560V-140C4241 -45 4286 0 4381 0ZM4385 -152V-548C4385 -563 4390 -568 4405 -568H4614C4629 -568 4634 -563 4634 -548V-152C4634 -137 4629 -132 4614 -132H4405C4390 -132 4385 -137 4385 -152ZM4919 0H5059V-467L5334 0H5474V-700H5334V-249L5069 -700H4919ZM5768 0H5912V-570H6102V-700H5578V-570H5768ZM6063 0H6215L6258 -152H6498L6541 0H6699L6486 -700H6276ZM6295 -284 6378 -578 6461 -284Z"/></svg><span class="sr">Faça a conta</span></span><span class="ol grad" data-em="7.1850"><svg viewBox="79 -700 7185 700" style="--em:7.1850" aria-hidden="true" focusable="false"><defs><linearGradient id="olg37" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg37)" d="M79 0H462C557 0 602 -45 602 -140V-560C602 -655 557 -700 462 -700H79ZM223 -132V-568H438C453 -568 458 -563 458 -548V-152C458 -137 453 -132 438 -132ZM866 0H1123C1218 0 1263 -45 1263 -140V-560C1263 -655 1218 -700 1123 -700H866C771 -700 726 -655 726 -560V-140C726 -45 771 0 866 0ZM870 -152V-548C870 -563 875 -568 890 -568H1099C1114 -568 1119 -563 1119 -548V-152C1119 -137 1114 -132 1099 -132H890C875 -132 870 -137 870 -152ZM1763 0H1993C2088 0 2133 -45 2133 -140V-256C2133 -346 2077 -381 1989 -400L1803 -440C1777 -446 1769 -452 1769 -474V-550C1769 -565 1774 -570 1789 -570H1961C1976 -570 1981 -565 1981 -550V-480H2121V-560C2121 -655 2076 -700 1981 -700H1765C1670 -700 1625 -655 1625 -560V-452C1625 -362 1681 -327 1769 -308L1955 -268C1981 -262 1989 -256 1989 -234V-150C1989 -135 1984 -130 1969 -130H1783C1768 -130 1763 -135 1763 -150V-228H1623V-140C1623 -45 1668 0 1763 0ZM2270 0H2741V-132H2414V-293H2679V-423H2414V-568H2741V-700H2270ZM3001 0H3245C3340 0 3385 -45 3385 -140V-700H3241V-152C3241 -137 3236 -132 3221 -132H3025C3010 -132 3005 -137 3005 -152V-700H2861V-140C2861 -45 2906 0 3001 0ZM3899 0H4140C4235 0 4280 -45 4280 -140V-386H4004V-260H4136V-152C4136 -137 4131 -132 4116 -132H3923C3908 -132 3903 -137 3903 -152V-548C3903 -563 3908 -568 3923 -568H4116C4131 -568 4136 -563 4136 -548V-468H4280V-560C4280 -655 4235 -700 4140 -700H3899C3804 -700 3759 -655 3759 -560V-140C3759 -45 3804 0 3899 0ZM4347 0H4499L4542 -152H4782L4825 0H4983L4770 -700H4560ZM4579 -284 4662 -578 4745 -284ZM5078 0H5218V-467L5493 0H5633V-700H5493V-249L5228 -700H5078ZM5791 0H5935V-292H6183V0H6327V-700H6183V-424H5935V-700H5791ZM6608 0H6865C6960 0 7005 -45 7005 -140V-560C7005 -655 6960 -700 6865 -700H6608C6513 -700 6468 -655 6468 -560V-140C6468 -45 6513 0 6608 0ZM6612 -152V-548C6612 -563 6617 -568 6632 -568H6841C6856 -568 6861 -563 6861 -548V-152C6861 -137 6856 -132 6841 -132H6632C6617 -132 6612 -137 6612 -152ZM7104 0H7264V-156H7104Z"/></svg><span class="sr">do seu ganho.</span></span></span></h2>
+      <p class="lead rv">Mexa nos números e veja quanto 40% da taxa pode render. Os valores iniciais são só um exemplo.</p>
+    </div>
+    <div class="calc">
+      <div class="cbox ctl rv">
+        <label><span class="top">Indicados jogando no 1º mês<output id="o-i"></output></span><input type="range" id="i" min="10" max="5000" step="10" value="300"></label>
+        <label><span class="top">Crescimento ao mês<output id="o-g"></output></span><input type="range" id="g" min="0" max="30" step="1" value="10"></label>
+        <label><span class="top">Partidas por jogador no mês<output id="o-p"></output></span><input type="range" id="p" min="5" max="300" step="5" value="60"></label>
+        <label><span class="top">Valor médio da entrada<output id="o-e"></output></span><input type="range" id="e" min="1" max="100" step="1" value="5"></label>
+        <label><span class="top">Taxa média da mesa<output id="o-t"></output></span><input type="range" id="t" min="5" max="10" step="0.5" value="8"></label>
+        <div class="fix"><span>Sua parte da taxa</span><b>40%</b></div>
+      </div>
+      <div class="cbox cres rv" style="--d:.1s">
+        <span class="lbl">Seu ganho em 12 meses</span>
+        <p class="big-n" id="tot">R$ 0</p>
+        <div class="mths"><div><span>Mês 1</span><b id="m1"></b></div><div><span>Mês 6</span><b id="m6"></b></div><div><span>Mês 12</span><b id="m12"></b></div></div>
+        <div class="chart" id="chart"></div>
+        <div class="axis"><span>Mês 1</span><span>3</span><span>6</span><span>9</span><span>12</span></div>
+        <div class="brk">
+          <div><span>Valor jogado nas mesas</span><b id="b-vol"></b></div>
+          <div><span>Taxa das mesas (rake)</span><b id="b-rk"></b></div>
+          <div class="tot"><span>Sua parte · 40%</span><b id="b-res"></b></div>
+        </div>
+        <p class="disc">Simulação ilustrativa, não é garantia. O ganho é apurado sobre a taxa efetivamente arrecadada nas mesas dos seus indicados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · COMO FUNCIONA -->
+<section class="sec light" id="como" data-stop>
+  <div class="wrap">
+    <p class="kick rv"><b>10</b><i></i>Como funciona</p>
+    <h2 class="ttl l rv"><span class="ol" data-em="4.0550"><svg viewBox="58 -700 4055 700" style="--em:4.0550" aria-hidden="true" focusable="false"><path fill="currentColor" d="M198 0H428C523 0 568 -45 568 -140V-256C568 -346 512 -381 424 -400L238 -440C212 -446 204 -452 204 -474V-550C204 -565 209 -570 224 -570H396C411 -570 416 -565 416 -550V-480H556V-560C556 -655 511 -700 416 -700H200C105 -700 60 -655 60 -560V-452C60 -362 116 -327 204 -308L390 -268C416 -262 424 -256 424 -234V-150C424 -135 419 -130 404 -130H218C203 -130 198 -135 198 -150V-228H58V-140C58 -45 103 0 198 0ZM705 0H849V-700H705ZM1007 0H1145V-446L1296 -93H1402L1553 -446V0H1695V-700H1537L1351 -288L1165 -700H1007ZM1853 0H1997V-234H2223C2318 -234 2363 -279 2363 -374V-560C2363 -655 2318 -700 2223 -700H1853ZM1997 -366V-568H2199C2214 -568 2219 -563 2219 -548V-386C2219 -371 2214 -366 2199 -366ZM2479 0H2925V-132H2623V-700H2479ZM3034 0H3505V-132H3178V-293H3443V-423H3178V-568H3505V-700H3034ZM3743 0H3973C4068 0 4113 -45 4113 -140V-256C4113 -346 4057 -381 3969 -400L3783 -440C3757 -446 3749 -452 3749 -474V-550C3749 -565 3754 -570 3769 -570H3941C3956 -570 3961 -565 3961 -550V-480H4101V-560C4101 -655 4056 -700 3961 -700H3745C3650 -700 3605 -655 3605 -560V-452C3605 -362 3661 -327 3749 -308L3935 -268C3961 -262 3969 -256 3969 -234V-150C3969 -135 3964 -130 3949 -130H3763C3748 -130 3743 -135 3743 -150V-228H3603V-140C3603 -45 3648 0 3743 0Z"/></svg><span class="sr">Simples</span></span><span class="ol brand" data-em="6.2730"><svg viewBox="79 -700 6273 700" style="--em:6.2730" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H462C557 0 602 -45 602 -140V-560C602 -655 557 -700 462 -700H79ZM223 -132V-568H438C453 -568 458 -563 458 -548V-152C458 -137 453 -132 438 -132ZM743 0H1214V-132H887V-293H1152V-423H887V-568H1214V-700H743ZM1704 0H1936C2031 0 2076 -45 2076 -140V-254H1932V-152C1932 -137 1927 -132 1912 -132H1728C1713 -132 1708 -137 1708 -152V-548C1708 -563 1713 -568 1728 -568H1912C1927 -568 1932 -563 1932 -548V-446H2076V-560C2076 -655 2031 -700 1936 -700H1704C1609 -700 1564 -655 1564 -560V-140C1564 -45 1609 0 1704 0ZM2327 0H2584C2679 0 2724 -45 2724 -140V-560C2724 -655 2679 -700 2584 -700H2327C2232 -700 2187 -655 2187 -560V-140C2187 -45 2232 0 2327 0ZM2331 -152V-548C2331 -563 2336 -568 2351 -568H2560C2575 -568 2580 -563 2580 -548V-152C2580 -137 2575 -132 2560 -132H2351C2336 -132 2331 -137 2331 -152ZM2865 0H3003V-446L3154 -93H3260L3411 -446V0H3553V-700H3395L3209 -288L3023 -700H2865ZM3711 0H4182V-132H3855V-293H4120V-423H3855V-568H4182V-700H3711ZM4424 0H4495V62C4495 77 4490 82 4475 82H4372L4422 160H4505C4567 160 4599 140 4599 66V0H4656C4751 0 4796 -45 4796 -140V-254H4652V-152C4652 -137 4647 -132 4632 -132H4448C4433 -132 4428 -137 4428 -152V-548C4428 -563 4433 -568 4448 -568H4632C4647 -568 4652 -563 4652 -548V-446H4796V-560C4796 -655 4751 -700 4656 -700H4424C4329 -700 4284 -655 4284 -560V-140C4284 -45 4329 0 4424 0ZM4853 0H5005L5048 -152H5288L5331 0H5489L5276 -700H5066ZM5085 -284 5168 -578 5251 -284ZM5584 0H5728V-247H5844L5960 0H6115L5996 -255C6062 -267 6093 -312 6093 -391V-560C6093 -655 6048 -700 5953 -700H5584ZM5728 -375V-570H5929C5944 -570 5949 -565 5949 -550V-395C5949 -380 5944 -375 5929 -375ZM6192 0H6352V-156H6192Z"/></svg><span class="sr">de começar.</span></span></h2>
+    <div class="tl" id="tl">
+      <div class="tl-track"></div><div class="tl-fill" id="tlFill"></div>
+      <div class="tl-s"><span class="ttl"><span class="ol" data-em="0.9020"><svg viewBox="62 -700 902 700" style="--em:0.9020" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM820 0H964V-700H850L679 -624V-504L820 -550Z"/></svg><span class="sr">01</span></span></span><p class="h3">Cadastro</p><p class="p-m">Você se cadastra como afiliado EstrelaGames.</p></div>
+      <div class="tl-s"><span class="ttl"><span class="ol" data-em="1.1310"><svg viewBox="62 -700 1131 700" style="--em:1.1310" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM701 -236V0H1193V-132H845V-204C845 -230 859 -234 885 -244L1047 -304C1132 -335 1191 -368 1191 -448V-560C1191 -655 1146 -700 1051 -700H849C754 -700 709 -655 709 -560V-482H849V-548C849 -563 854 -568 869 -568H1027C1042 -568 1047 -563 1047 -548V-480C1047 -454 1033 -450 1007 -440L845 -380C760 -349 701 -316 701 -236Z"/></svg><span class="sr">02</span></span></span><p class="h3">Seu link</p><p class="p-m">Recebe o seu link de indicação.</p></div>
+      <div class="tl-s"><span class="ttl"><span class="ol" data-em="1.1330"><svg viewBox="62 -700 1133 700" style="--em:1.1330" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM831 0H1055C1150 0 1195 -45 1195 -140V-250C1195 -299 1174 -336 1124 -358C1170 -383 1187 -417 1187 -466V-560C1187 -655 1142 -700 1047 -700H839C744 -700 699 -655 699 -560V-484H843V-550C843 -565 848 -570 863 -570H1023C1038 -570 1043 -565 1043 -550V-442C1043 -427 1038 -422 1023 -422H864V-294H1031C1046 -294 1051 -289 1051 -274V-150C1051 -135 1046 -130 1031 -130H855C840 -130 835 -135 835 -150V-216H691V-140C691 -45 736 0 831 0Z"/></svg><span class="sr">03</span></span></span><p class="h3">Divulgação</p><p class="p-m">Leva o EstrelaGames para a sua audiência.</p></div>
+      <div class="tl-s"><span class="ttl"><span class="ol" data-em="1.1940"><svg viewBox="62 -700 1194 700" style="--em:1.1940" aria-hidden="true" focusable="false"><path fill="currentColor" d="M202 0H441C536 0 581 -45 581 -140V-560C581 -655 536 -700 441 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0ZM206 -152V-548C206 -563 211 -568 226 -568H417C432 -568 437 -563 437 -548V-152C437 -137 432 -132 417 -132H226C211 -132 206 -137 206 -152ZM1015 0H1155V-144H1256V-272H1155V-700H1023L665 -262L695 -144H1015ZM841 -272 1015 -491V-272Z"/></svg><span class="sr">04</span></span></span><p class="h3">Sua renda</p><p class="p-m">Seus indicados jogam e 40% da taxa é sua.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="sec fim center" id="fim" data-stop>
+  <div class="wrap">
+    <h2 class="ttl xl rv"><span class="ol" data-em="7.2740"><svg viewBox="58 -700 7274 700" style="--em:7.2740" aria-hidden="true" focusable="false"><path fill="currentColor" d="M198 0H428C523 0 568 -45 568 -140V-256C568 -346 512 -381 424 -400L238 -440C212 -446 204 -452 204 -474V-550C204 -565 209 -570 224 -570H396C411 -570 416 -565 416 -550V-480H556V-560C556 -655 511 -700 416 -700H200C105 -700 60 -655 60 -560V-452C60 -362 116 -327 204 -308L390 -268C416 -262 424 -256 424 -234V-150C424 -135 419 -130 404 -130H218C203 -130 198 -135 198 -150V-228H58V-140C58 -45 103 0 198 0ZM838 0H1082C1177 0 1222 -45 1222 -140V-700H1078V-152C1078 -137 1073 -132 1058 -132H862C847 -132 842 -137 842 -152V-700H698V-140C698 -45 743 0 838 0ZM1298 0H1450L1493 -152H1733L1776 0H1934L1721 -700H1511ZM1530 -284 1613 -578 1696 -284ZM2170 0H2322L2365 -152H2605L2648 0H2806L2593 -700H2383ZM2402 -284 2485 -578 2568 -284ZM3022 0H3266C3361 0 3406 -45 3406 -140V-700H3262V-152C3262 -137 3257 -132 3242 -132H3046C3031 -132 3026 -137 3026 -152V-700H2882V-140C2882 -45 2927 0 3022 0ZM3557 0H3940C4035 0 4080 -45 4080 -140V-560C4080 -655 4035 -700 3940 -700H3557ZM3701 -132V-568H3916C3931 -568 3936 -563 3936 -548V-152C3936 -137 3931 -132 3916 -132ZM4221 0H4365V-700H4221ZM4523 0H4994V-132H4667V-293H4932V-423H4667V-568H4994V-700H4523ZM4571 -766H4700L4761 -829L4822 -766H4951L4821 -896H4701ZM5121 0H5261V-467L5536 0H5676V-700H5536V-249L5271 -700H5121ZM5957 0H6189C6284 0 6329 -45 6329 -140V-254H6185V-152C6185 -137 6180 -132 6165 -132H5981C5966 -132 5961 -137 5961 -152V-548C5961 -563 5966 -568 5981 -568H6165C6180 -568 6185 -563 6185 -548V-446H6329V-560C6329 -655 6284 -700 6189 -700H5957C5862 -700 5817 -655 5817 -560V-140C5817 -45 5862 0 5957 0ZM6457 0H6601V-700H6457ZM6696 0H6848L6891 -152H7131L7174 0H7332L7119 -700H6909ZM6928 -284 7011 -578 7094 -284Z"/></svg><span class="sr">Sua audiência</span></span><span class="ol grad" data-em="6.0970"><svg viewBox="62 -700 6097 700" style="--em:6.0970" aria-hidden="true" focusable="false"><defs><linearGradient id="olg45" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg45)" d="M253 128H397V0H447C542 0 587 -45 587 -140V-560C587 -655 542 -700 447 -700H202C107 -700 62 -655 62 -560V-140C62 -45 107 0 202 0H253ZM206 -152V-548C206 -563 211 -568 226 -568H423C438 -568 443 -563 443 -548V-152C443 -137 438 -132 423 -132H226C211 -132 206 -137 206 -152ZM861 0H1105C1200 0 1245 -45 1245 -140V-700H1101V-152C1101 -137 1096 -132 1081 -132H885C870 -132 865 -137 865 -152V-700H721V-140C721 -45 766 0 861 0ZM1396 0H1867V-132H1540V-293H1805V-423H1540V-568H1867V-700H1396ZM1994 0H2138V-247H2254L2370 0H2525L2406 -255C2472 -267 2503 -312 2503 -391V-560C2503 -655 2458 -700 2363 -700H1994ZM2138 -375V-570H2339C2354 -570 2359 -565 2359 -550V-395C2359 -380 2354 -375 2339 -375ZM2944 0H3137C3232 0 3277 -45 3277 -140V-700H3133V-152C3133 -137 3128 -132 3113 -132H2968C2953 -132 2948 -137 2948 -152V-296H2804V-140C2804 -45 2849 0 2944 0ZM3551 0H3808C3903 0 3948 -45 3948 -140V-560C3948 -655 3903 -700 3808 -700H3551C3456 -700 3411 -655 3411 -560V-140C3411 -45 3456 0 3551 0ZM3555 -152V-548C3555 -563 3560 -568 3575 -568H3784C3799 -568 3804 -563 3804 -548V-152C3804 -137 3799 -132 3784 -132H3575C3560 -132 3555 -137 3555 -152ZM4212 0H4453C4548 0 4593 -45 4593 -140V-386H4317V-260H4449V-152C4449 -137 4444 -132 4429 -132H4236C4221 -132 4216 -137 4216 -152V-548C4216 -563 4221 -568 4236 -568H4429C4444 -568 4449 -563 4449 -548V-468H4593V-560C4593 -655 4548 -700 4453 -700H4212C4117 -700 4072 -655 4072 -560V-140C4072 -45 4117 0 4212 0ZM4660 0H4812L4855 -152H5095L5138 0H5296L5083 -700H4873ZM4892 -284 4975 -578 5058 -284ZM5391 0H5535V-247H5651L5767 0H5922L5803 -255C5869 -267 5900 -312 5900 -391V-560C5900 -655 5855 -700 5760 -700H5391ZM5535 -375V-570H5736C5751 -570 5756 -565 5756 -550V-395C5756 -380 5751 -375 5736 -375ZM5999 0H6159V-156H5999Z"/></svg><span class="sr">quer jogar.</span></span></h2>
+    <p class="st rv">E você, uma nova renda.</p>
+    <div class="btns rv">
+      <a class="btn btn-p btn-xl" href="#fim" data-aff><span class="lg"><img src="assets/eg/logo.svg" alt=""></span>Quero ser afiliado<span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+      <a class="btn btn-g" href="https://robertaestrela.github.io/truco-mineiro-estrelagames/" target="_blank" rel="noopener">Ver o produto<span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+    </div>
+  </div>
+  <footer class="wrap foot">
+    <div class="foot-top">
+      <a class="nav-brand foot-brand" href="#topo" aria-label="EstrelaGames"><span class="fb"><img class="eg" src="assets/eg/logo.svg" alt=""><span class="egw">Estrela<b>Games</b></span></span><span class="s">Programa de afiliados</span></a>
+      <a class="btn btn-g btn-s" href="#topo">Voltar ao topo<span class="ic"><svg style="transform:rotate(-90deg)"><use href="#i-arrow"/></svg></span></a>
+    </div>
+    <svg class="giant" viewBox="70 -700 7486 700" style="--em:7.4860" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H552V-144H236V-287H489V-429H236V-556H552V-700H70ZM774 0H1024C1117 0 1162 -45 1162 -138V-261C1162 -356 1111 -382 1018 -405L832 -450C810 -455 804 -460 804 -476V-541C804 -556 809 -560 823 -560H967C981 -560 986 -556 986 -541V-478H1150V-562C1150 -656 1105 -700 1012 -700H776C683 -700 638 -656 638 -562V-447C638 -352 689 -326 782 -303L968 -258C989 -253 996 -248 996 -232V-159C996 -145 991 -140 977 -140H819C805 -140 800 -145 800 -159V-230H636V-138C636 -45 681 0 774 0ZM1405 0H1571V-555H1754V-700H1223V-555H1405ZM1845 0H2011V-241H2108L2225 0H2398L2277 -253C2342 -265 2373 -308 2373 -387V-562C2373 -656 2328 -700 2235 -700H1845ZM2011 -379V-559H2188C2202 -559 2207 -555 2207 -540V-398C2207 -383 2202 -379 2188 -379ZM2498 0H2980V-144H2664V-287H2917V-429H2664V-556H2980V-700H2498ZM3093 0H3550V-146H3259V-700H3093ZM3584 0H3756L3796 -148H4019L4059 0H4238L4025 -700H3796ZM3834 -289 3908 -563 3981 -289ZM4428 0H4687C4780 0 4825 -45 4825 -138V-397H4542V-260H4660V-162C4660 -148 4655 -143 4641 -143H4475C4461 -143 4456 -148 4456 -162V-538C4456 -553 4461 -557 4475 -557H4641C4655 -557 4660 -553 4660 -538V-469H4825V-562C4825 -656 4780 -700 4687 -700H4428C4335 -700 4290 -656 4290 -562V-138C4290 -45 4335 0 4428 0ZM4879 0H5051L5091 -148H5314L5354 0H5533L5320 -700H5091ZM5129 -289 5203 -563 5276 -289ZM5612 0H5770V-425L5911 -89H6021L6162 -425V0H6324V-700H6140L5969 -310L5797 -700H5612ZM6464 0H6946V-144H6630V-287H6883V-429H6630V-556H6946V-700H6464ZM7168 0H7418C7511 0 7556 -45 7556 -138V-261C7556 -356 7505 -382 7412 -405L7226 -450C7204 -455 7198 -460 7198 -476V-541C7198 -556 7203 -560 7217 -560H7361C7375 -560 7380 -556 7380 -541V-478H7544V-562C7544 -656 7499 -700 7406 -700H7170C7077 -700 7032 -656 7032 -562V-447C7032 -352 7083 -326 7176 -303L7362 -258C7383 -253 7390 -248 7390 -232V-159C7390 -145 7385 -140 7371 -140H7213C7199 -140 7194 -145 7194 -159V-230H7030V-138C7030 -45 7075 0 7168 0Z"/></svg>
+    <div class="legal">
+      <p>18+ · Jogue com responsabilidade. Jogos de habilidade entre jogadores, com taxa sobre o pote de cada mesa. Simulações ilustrativas, não são garantia. As condições do programa valem como formalizadas no contrato de afiliado.</p>
+      <span>© 2026 EstrelaGames</span>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<script>
+/* ===== Link de cadastro de afiliado (preencha quando tiver; vazio = o botão leva ao final da página) ===== */
+const AFF = '';
+if (AFF) document.querySelectorAll('[data-aff]').forEach(a => { a.href = AFF; a.target = '_blank'; a.rel = 'noopener'; });
+
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const html = document.documentElement;
+
+/* ===== Títulos: tamanho em múltiplos de 4, sem passar da largura ===== */
+function fit() {
+  $$('.ttl').forEach(t => {
+    // largura de cada linha em em (uma .olrow soma os trechos + o espaço entre eles)
+    const em = o => o.classList.contains('olrow') ? [...o.children].reduce((w, c) => w + (+c.dataset.em || 0), 0) + .28 * (o.children.length - 1) : +o.dataset.em || 0;
+    const max = Math.max(0, ...[...t.querySelectorAll(':scope > .ol, :scope > .olrow')].map(em));
+    if (!max || t.closest('.marq')) return;
+    t.style.fontSize = '';
+    const base = parseFloat(getComputedStyle(t).fontSize);
+    const room = Math.floor(t.clientWidth / max / 4) * 4;
+    let fs = t.dataset.fit === 'fill' ? room : Math.min(base, room);
+    if (t.dataset.max) fs = Math.min(fs, +t.dataset.max);
+    t.style.fontSize = fs + 'px';
+  });
+}
+
+/* ===== Salão: o diagrama de 720 × 528 escala com a largura ===== */
+function fitHall() {
+  const h = $('#hall'); if (!h) return;
+  if (innerWidth <= 640) { h.firstElementChild.style.transform = ''; h.style.height = 'auto'; return; }   // no celular vira grade
+  const k = Math.min(1, h.clientWidth / 720);
+  h.firstElementChild.style.transform = `scale(${k})`;
+  h.style.height = (528 * k) + 'px';
+}
+
+/* ===== Frases que acendem palavra por palavra ===== */
+$$('.words').forEach(el => {
+  const out = [];
+  el.childNodes.forEach(n => {
+    const hl = n.nodeType === 1 && n.classList.contains('hl');
+    (n.textContent || '').split(/(\s+)/).forEach(p => {
+      if (!p) return;
+      out.push(/^\s+$/.test(p) ? p : `<span class="w${hl ? ' hl' : ''}">${p}</span>`);
+    });
+  });
+  el.innerHTML = out.join('');
+});
+
+/* ===== Reveal ===== */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold: .15, rootMargin: '0px 0px -8% 0px'});
+$$('.rv, #coll').forEach(el => io.observe(el));
+$$('.ri').forEach((el, i) => el.style.setProperty('--d', (i * .08) + 's'));
+
+/* ===== Jogos: carrossel contínuo num semicírculo de ponta a ponta (no celular, faixa reta) ===== */
+const games = $('#games');
+[...games.children].forEach(g => games.appendChild(g.cloneNode(true)));
+const gcards = [...games.children];
+let gx = 0, gLast = 0, gOn = true;
+new IntersectionObserver(es => gOn = es[0].isIntersecting).observe(games);
+function gamesFrame(t) {
+  const dt = Math.min(64, t - (gLast || t)); gLast = t;
+  if (gOn) {
+    if (!RM) gx += dt * .14;   // px por ms, sem parar
+    const vw = games.clientWidth, sp = vw < 640 ? 208 : 248, tot = gcards.length * sp;
+    const R = vw < 1024 ? 1e6 : Math.max(vw, 1280) * .95;
+    gcards.forEach((c, i) => {
+      const x = ((i * sp - gx) % tot + tot) % tot - tot / 2;
+      const y = R - Math.sqrt(Math.max(R * R - x * x, 0));
+      c.style.transform = `translate3d(${x}px,${y}px,0) rotate(${Math.asin(clamp(x / R, -1, 1)) * 180 / Math.PI}deg)`;
+    });
+  }
+  requestAnimationFrame(gamesFrame);
+}
+requestAnimationFrame(gamesFrame);
+
+/* ===== Telas: leque com uma no meio; rolam sozinhas para o lado e a do meio chega com um quique ===== */
+const track = $('#track'), phones = $$('.tph');
+let PW = 276, PH = 600;
+function sizePhones() {
+  PH = innerWidth < 640 ? 440 : Math.round(clamp(innerHeight * .44, 360, 600) / 4) * 4;
+  PW = Math.round(PH * 375 / 812);
+  track.style.setProperty('--ph', PH + 'px'); track.style.setProperty('--pw', PW + 'px');
+}
+function layoutPhones(shift) {
+  const vw = track.clientWidth, n = phones.length, gap = Math.min(PW * 1.04, vw * .27);
+  phones.forEach((ph, i) => {
+    let d = ((i - shift) % n + n) % n; if (d > n / 2) d -= n;   // distância até o meio, em telas
+    const a = Math.abs(d);
+    const sc = a < 1 ? 1.16 - a * .28 : Math.max(.88 - (a - 1) * .08, .6);
+    ph.style.transform = `translate3d(${d * gap - PW / 2}px,${a * PH * .06 + a * a * PH * .012}px,0) rotate(${clamp(d * 6, -18, 18)}deg) scale(${sc})`;
+    ph.style.opacity = clamp(3.4 - a, 0, 1);
+    ph.style.zIndex = 20 - Math.round(a * 2);
+    ph.classList.toggle('on', a < .5);
+  });
+}
+const STEP = 1700, MOVE = 900;   // a cada 1,7 s a próxima tela chega ao meio em 0,9 s
+const bounce = t => 1 + 2.7 * (t - 1) ** 3 + 1.7 * (t - 1) ** 2;   // passa ~10% do meio e volta
+let pT = 0, pLast = 0, pOn = true;
+new IntersectionObserver(es => pOn = es[0].isIntersecting).observe(track);
+function phonesTick(t) {
+  const dt = Math.min(64, t - (pLast || t)); pLast = t;
+  if (pOn) {
+    if (!RM && !html.classList.contains('all')) pT += dt;
+    const k = pT / STEP, f = k - Math.floor(k);
+    layoutPhones(Math.floor(k) + (f < MOVE / STEP ? bounce(f / (MOVE / STEP)) : 1));
+  }
+  requestAnimationFrame(phonesTick);
+}
+requestAnimationFrame(phonesTick);
+
+/* ===== Scroll: hero, progresso, frases, faixa, linha do tempo, nav ===== */
+const heroImg = $('#heroImg'), heroIn = $('#heroIn');
+const marq = $('#marq'), marqBox = $('.marq'), tl = $('#tl'), tlFill = $('#tlFill');
+const steps = $$('.tl-s'), links = $$('.nav-links a'), lights = $$('.light'), nav = $('#nav');
+const secs = links.map(a => $(a.getAttribute('href')));
+const words = $$('.words');
+let ticking = false;
+function onScroll() {
+  ticking = false;
+  const vh = innerHeight, y = scrollY, H = html.scrollHeight - vh, all = html.classList.contains('all');
+  $('#prog').style.transform = `scaleX(${H > 0 ? y / H : 0})`;
+  if (!RM && !all && innerWidth > 640) {   // parallax do hero (no celular a imagem fica parada)
+    const k = clamp(y / vh);
+    heroImg.style.transform = `translate3d(0,${-y * .06}px,0) scale(${1.04 + k * .1})`;
+    heroIn.style.transform = `translate3d(0,${-y * .2}px,0)`;
+    heroIn.style.opacity = 1 - k * 1.2;
+  }
+  if (!all) words.forEach(el => {
+    const r = el.getBoundingClientRect();
+    const p = clamp((vh * .9 - r.top) / (vh * .55));
+    const ws = el.querySelectorAll('.w'), lit = Math.round(p * ws.length);
+    ws.forEach((w, i) => w.classList.toggle('on', i < lit));
+  });
+  if (marq) {
+    const r = marqBox.getBoundingClientRect();
+    const p = clamp((vh - r.top) / (vh + r.height));
+    marq.style.transform = `translate3d(${(-.02 - p * .45) * marq.scrollWidth / 2}px,0,0)`;
+  }
+  if (tl) {
+    const r = tl.getBoundingClientRect();
+    const p = all ? 1 : clamp((vh * .75 - r.top) / (r.height * .9));
+    tlFill.style.transform = `scaleX(${p})`;
+    steps.forEach((s, i) => s.classList.toggle('on', p >= i / steps.length + .01));
+  }
+  nav.classList.toggle('lt', lights.some(s => { const r = s.getBoundingClientRect(); return r.top <= 48 && r.bottom >= 48; }));
+  let on = -1;
+  secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < vh * .4) on = i; });
+  links.forEach((a, i) => a.classList.toggle('on', i === on));
+}
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive: true});
+addEventListener('resize', () => { fit(); fitHall(); sizePhones(); onScroll(); });
+
+/* ===== A conta do afiliado =====
+   indicados(m) = indicados no 1º mês × (1 + crescimento)^(m − 1)
+   taxa(m) = indicados × partidas × entrada média × taxa média
+   seu ganho(m) = 40% × taxa(m) */
+const SHARE = .4;
+const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+const short = v => {
+  const a = Math.abs(v), s = v < 0 ? '−' : '';
+  if (a >= 1e6) return s + 'R$ ' + (a / 1e6).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + ' mi';
+  if (a >= 1e3) return s + 'R$ ' + Math.round(a / 1e3).toLocaleString('pt-BR') + ' mil';
+  return s + 'R$ ' + Math.round(a);
+};
+const chart = $('#chart');
+chart.innerHTML = Array.from({length: 12}, (_, i) => `<i style="--d:${i * .03}s"></i>`).join('');
+const bars = [...chart.children];
+const fmt = {i: v => (+v).toLocaleString('pt-BR'), g: v => v + '%', p: v => v, e: v => 'R$ ' + v, t: v => (+v).toLocaleString('pt-BR') + '%'};
+let shown = 0, raf;
+function calc() {
+  const v = {};
+  Object.keys(fmt).forEach(k => {
+    const el = $('#' + k); v[k] = +el.value;
+    $('#o-' + k).textContent = fmt[k](el.value);
+    el.style.setProperty('--p', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
+  });
+  let tot = 0, volT = 0, rkT = 0; const res = [];
+  for (let m = 1; m <= 12; m++) {
+    const n = v.i * Math.pow(1 + v.g / 100, m - 1);
+    const vol = n * v.p * v.e, rk = vol * v.t / 100, mine = rk * SHARE;
+    res.push(mine); tot += mine; volT += vol; rkT += rk;
+  }
+  animateTo(tot);
+  $('#m1').textContent = short(res[0]); $('#m6').textContent = short(res[5]); $('#m12').textContent = short(res[11]);
+  $('#b-vol').textContent = brl(volT); $('#b-rk').textContent = brl(rkT); $('#b-res').textContent = brl(tot);
+  const mx = Math.max(...res, 1);
+  bars.forEach((b, i) => { b.style.height = (res[i] / mx * 100) + '%'; });
+}
+function animateTo(target) {
+  cancelAnimationFrame(raf);
+  const from = shown, t0 = performance.now(), dur = RM ? 0 : 600;
+  const step = t => {
+    const k = dur ? Math.min(1, (t - t0) / dur) : 1, e = 1 - Math.pow(1 - k, 3);
+    shown = from + (target - from) * e;
+    $('#tot').textContent = short(shown);
+    if (k < 1) raf = requestAnimationFrame(step);
+  };
+  raf = requestAnimationFrame(step);
+}
+$$('.ctl input').forEach(el => el.addEventListener('input', calc));
+new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { calc(); o.disconnect(); } }), {threshold: .3}).observe($('.calc'));
+
+/* ===== Modo apresentação (desktop): → ou PageDown avança uma dobra, ← ou PageUp volta, como num PPT ===== */
+const DESK = matchMedia('(min-width:1024px) and (pointer:fine)');
+const stops = [$('#topo'), ...$$('[data-stop]')];
+const stopY = el => Math.max(0, Math.round(el.getBoundingClientRect().top + scrollY - (+el.dataset.stop || 0)));
+const easeIO = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+let goRaf;
+function goTo(y) {
+  cancelAnimationFrame(goRaf);
+  html.style.scrollBehavior = 'auto';
+  const from = scrollY, dist = y - from, t0 = performance.now(), dur = RM ? 0 : 800;
+  const step = t => {
+    const k = dur ? Math.min(1, (t - t0) / dur) : 1;
+    scrollTo(0, from + dist * easeIO(k));
+    if (k < 1) goRaf = requestAnimationFrame(step); else html.style.scrollBehavior = '';
+  };
+  goRaf = requestAnimationFrame(step);
+}
+const keys = $('#keys');
+addEventListener('keydown', e => {
+  if (!DESK.matches || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;   // as setas continuam mexendo nos controles da conta
+  const fwd = e.key === 'ArrowRight' || e.key === 'PageDown', back = e.key === 'ArrowLeft' || e.key === 'PageUp';
+  if (!fwd && !back) return;
+  e.preventDefault();
+  keys.classList.remove('show');
+  const ys = stops.map(stopY), cur = scrollY;
+  const y = fwd ? ys.find(v => v > cur + 8) : [...ys].reverse().find(v => v < cur - 8);
+  goTo(y === undefined ? (fwd ? html.scrollHeight : 0) : y);
+});
+if (DESK.matches) { setTimeout(() => keys.classList.add('show'), 1600); setTimeout(() => keys.classList.remove('show'), 8000); }
+
+/* ===== Início ===== */
+// ?revisao mostra tudo já revelado e SEM animações (só para revisão e PDF) · &y=N abre rolado
+if (/[?&]revisao\b/.test(location.search)) {
+  html.classList.add('all');
+  $$('.rv, #coll').forEach(e => e.classList.add('in'));
+  $$('.words .w').forEach(w => w.classList.add('on'));
+  calc();
+}
+fit(); fitHall(); sizePhones(); onScroll();
+if (html.classList.contains('all')) { const m = location.search.match(/[?&]y=(\d+)/); if (m) { html.style.scrollBehavior = 'auto'; scrollTo(0, +m[1]); } }
+if (document.fonts) document.fonts.ready.then(() => { fit(); onScroll(); });
+setTimeout(() => html.classList.add('ready'), 60);
+</script>
+</body>
+</html>
