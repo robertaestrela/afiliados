@@ -268,6 +268,13 @@ button,input{font:inherit;color:inherit}
 .gc .ttl{font-size:24px;margin-bottom:8px;align-self:stretch}
 .gc .ol svg{margin-inline:auto}
 .gc .p-s{color:var(--muted)}
+.gc.lock img{filter:grayscale(1);opacity:.4}
+.gc.lock .ttl{opacity:.56}
+.gc .lk{position:absolute;top:48px;left:calc(50% - 24px);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#0b0f1acc;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px #ffffff29,0 8px 24px #00000066;color:#fff}
+.gc .lk svg{width:20px;height:20px}
+.soon{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 10px;border-radius:999px;font:600 12px/24px var(--f-ui);white-space:nowrap}
+.soon svg{width:12px;height:12px}
+.gc .soon{background:#ffffff1a;box-shadow:inset 0 0 0 1px var(--line);color:var(--text)}
 .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .bx{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:400px;padding:32px;border-radius:28px;background:var(--s1);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 0 var(--line-2)}
 .bx.has-shot{height:480px;min-height:0}
@@ -475,9 +482,8 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
 
 /* ===== Tabela de taxas (dobra clara) ===== */
 .tx-h{margin-top:96px}
-.tx-top{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
-.tx-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:16px}
-.tx-top>*,.tx-row>*{min-width:0}
+.tx-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.tx-row>*{min-width:0}
 .tg{display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:24px;background:var(--l-card);border:1px solid var(--l-line);box-shadow:0 1px 0 #0000000a,0 16px 40px #0000000a}
 .tg-h{display:flex;align-items:center;gap:12px}
 .tg-h img{width:40px;height:40px;flex:none;object-fit:contain}
@@ -489,7 +495,10 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
 .tg th:first-child,.tg td:first-child{text-align:left}
 .tg td{padding:12px 0;border-top:1px solid var(--l-line);text-align:right;color:var(--l-muted)}
 .tg td b{font:600 24px/28px var(--f-disp);letter-spacing:-.02em;color:var(--ink)}
-@media (max-width:1024px){ .tx-top{grid-template-columns:1fr} .tx-row{grid-template-columns:1fr 1fr} }
+.tg.lock .tg-h img{filter:grayscale(1);opacity:.4}
+.tg.lock .rt{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;color:var(--l-muted)}
+.tg .soon{background:#0000000d;box-shadow:inset 0 0 0 1px var(--l-line);color:var(--ink);letter-spacing:0}
+@media (max-width:1024px){ .tx-row{grid-template-columns:1fr 1fr} }
 
 /* ===== 01 · Fantasy game: jogador contra jogador ===== */
 .fan{display:grid;grid-template-columns:6fr 5fr;gap:64px;align-items:center}
@@ -739,6 +748,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
   <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-check" viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 20 20"><rect x="4" y="9" width="12" height="8.5" rx="2.5" fill="currentColor"/><path d="M6.75 9V6.75a3.25 3.25 0 0 1 6.5 0V9" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="i-x" viewBox="0 0 20 20"><path d="M6.5 6.5l7 7M13.5 6.5l-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
 
@@ -773,7 +783,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
     <div class="hero-copy">
       <span class="chip ld" style="--d:.2s"><img src="assets/eg/logo.svg" alt=""><b>EstrelaGames</b>· Programa de afiliados</span>
       <h1 class="ttl hero-h ld" style="--d:.35s"><span class="ol" data-w="Black" data-em="7.5140"><svg viewBox="70 -700 7514 700" style="--em:7.5140" aria-hidden="true" focusable="false"><path fill="currentColor" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM2187 0H2456C2550 0 2594 -45 2594 -138V-562C2594 -656 2550 -700 2456 -700H2187C2094 -700 2049 -656 2049 -562V-138C2049 -45 2094 0 2187 0ZM2215 -163V-537C2215 -552 2220 -556 2234 -556H2409C2424 -556 2428 -552 2428 -537V-163C2428 -149 2424 -144 2409 -144H2234C2220 -144 2215 -149 2215 -163ZM2963 0H3129V-226H3353C3446 -226 3491 -270 3491 -364V-562C3491 -656 3446 -700 3353 -700H2963ZM3129 -369V-557H3306C3320 -557 3325 -553 3325 -538V-388C3325 -373 3320 -369 3306 -369ZM3593 0H3759V-241H3856L3973 0H4146L4025 -253C4090 -265 4121 -308 4121 -387V-562C4121 -656 4076 -700 3983 -700H3593ZM3759 -379V-559H3936C3950 -559 3955 -555 3955 -540V-398C3955 -383 3950 -379 3936 -379ZM4371 0H4640C4734 0 4778 -45 4778 -138V-562C4778 -656 4734 -700 4640 -700H4371C4278 -700 4233 -656 4233 -562V-138C4233 -45 4278 0 4371 0ZM4399 -163V-537C4399 -552 4404 -556 4418 -556H4593C4608 -556 4612 -552 4612 -537V-163C4612 -149 4608 -144 4593 -144H4418C4404 -144 4399 -149 4399 -163ZM4905 0H5305C5398 0 5443 -45 5443 -138V-562C5443 -656 5398 -700 5305 -700H4905ZM5071 -144V-556H5258C5272 -556 5277 -552 5277 -537V-163C5277 -149 5272 -144 5258 -144ZM5703 0H5960C6052 0 6098 -47 6098 -138V-700H5932V-166C5932 -153 5927 -147 5913 -147H5750C5737 -147 5731 -153 5731 -166V-700H5565V-138C5565 -47 5612 0 5703 0ZM6367 0H6533V-555H6716V-700H6185V-555H6367ZM6920 0H7189C7283 0 7327 -45 7327 -138V-562C7327 -656 7283 -700 7189 -700H6920C6827 -700 6782 -656 6782 -562V-138C6782 -45 6827 0 6920 0ZM6948 -163V-537C6948 -552 6953 -556 6967 -556H7142C7157 -556 7161 -552 7161 -537V-163C7161 -149 7157 -144 7142 -144H6967C6953 -144 6948 -149 6948 -163ZM7422 0H7584V-161H7422Z"/></svg><span class="sr">Novo produto.</span></span><span class="ol grad" data-w="Black" data-em="6.2290"><svg viewBox="70 -700 6229 700" style="--em:6.2290" aria-hidden="true" focusable="false"><defs><linearGradient id="olg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--g1)"/><stop offset="1" style="stop-color:var(--g2)"/></linearGradient></defs><path fill="url(#olg2)" d="M70 0H231V-434L493 0H647V-700H486V-289L239 -700H70ZM912 0H1181C1275 0 1319 -45 1319 -138V-562C1319 -656 1275 -700 1181 -700H912C819 -700 774 -656 774 -562V-138C774 -45 819 0 912 0ZM940 -163V-537C940 -552 945 -556 959 -556H1134C1149 -556 1153 -552 1153 -537V-163C1153 -149 1149 -144 1134 -144H959C945 -144 940 -149 940 -163ZM1589 0H1780L1994 -700H1819L1687 -177L1555 -700H1375ZM1928 0H2100L2140 -148H2363L2403 0H2582L2369 -700H2140ZM2178 -289 2252 -563 2325 -289ZM2885 0H3051V-241H3148L3265 0H3438L3317 -253C3382 -265 3413 -308 3413 -387V-562C3413 -656 3368 -700 3275 -700H2885ZM3051 -379V-559H3228C3242 -559 3247 -555 3247 -540V-398C3247 -383 3242 -379 3228 -379ZM3538 0H4020V-144H3704V-287H3957V-429H3704V-556H4020V-700H3538ZM4133 0H4294V-434L4556 0H4710V-700H4549V-289L4302 -700H4133ZM4850 0H5250C5343 0 5388 -45 5388 -138V-562C5388 -656 5343 -700 5250 -700H4850ZM5016 -144V-556H5203C5217 -556 5222 -552 5222 -537V-163C5222 -149 5217 -144 5203 -144ZM5440 0H5612L5652 -148H5875L5915 0H6094L5881 -700H5652ZM5690 -289 5764 -563 5837 -289ZM6137 0H6299V-161H6137Z"/></svg><span class="sr">Nova renda.</span></span></h1>
-      <p class="p-l ld" style="--d:.5s">Truco, cacheta, tranca, buraco, poker e sinuca num hub de jogos novo, entre jogadores. Você indica, a galera joga e você ganha uma porcentagem de cada mesa.</p>
+      <p class="p-l ld" style="--d:.5s">Truco, cacheta, tranca, buraco, sinuca e poker (em breve) num hub de jogos novo, entre jogadores. Você indica, a galera joga e você ganha uma porcentagem de cada mesa.</p>
       <div class="btns ld" style="--d:.65s">
         <a class="btn btn-p" href="#fim">Quero ser afiliado<span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
         <a class="btn btn-g" href="#conta">Ver a projeção<span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
@@ -933,7 +943,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
     <div class="gc" style="--c:#e5484d"><img src="assets/icons/truco.webp" alt=""><span class="ttl"><span class="ol" data-em="3.0890"><svg viewBox="25 -700 3089 700" style="--em:3.0890" aria-hidden="true" focusable="false"><path fill="currentColor" d="M215 0H359V-570H549V-700H25V-570H215ZM653 0H797V-247H913L1029 0H1184L1065 -255C1131 -267 1162 -312 1162 -391V-560C1162 -655 1117 -700 1022 -700H653ZM797 -375V-570H998C1013 -570 1018 -565 1018 -550V-395C1018 -380 1013 -375 998 -375ZM1436 0H1680C1775 0 1820 -45 1820 -140V-700H1676V-152C1676 -137 1671 -132 1656 -132H1460C1445 -132 1440 -137 1440 -152V-700H1296V-140C1296 -45 1341 0 1436 0ZM2094 0H2326C2421 0 2466 -45 2466 -140V-254H2322V-152C2322 -137 2317 -132 2302 -132H2118C2103 -132 2098 -137 2098 -152V-548C2098 -563 2103 -568 2118 -568H2302C2317 -568 2322 -563 2322 -548V-446H2466V-560C2466 -655 2421 -700 2326 -700H2094C1999 -700 1954 -655 1954 -560V-140C1954 -45 1999 0 2094 0ZM2717 0H2974C3069 0 3114 -45 3114 -140V-560C3114 -655 3069 -700 2974 -700H2717C2622 -700 2577 -655 2577 -560V-140C2577 -45 2622 0 2717 0ZM2721 -152V-548C2721 -563 2726 -568 2741 -568H2950C2965 -568 2970 -563 2970 -548V-152C2970 -137 2965 -132 2950 -132H2741C2726 -132 2721 -137 2721 -152Z"/></svg><span class="sr">Truco</span></span></span><span class="p-s">Paulista e Mineiro</span></div>
     <div class="gc" style="--c:#2cc160"><img src="assets/icons/tranca.webp" alt=""><span class="ttl"><span class="ol" data-em="3.8470"><svg viewBox="25 -700 3847 700" style="--em:3.8470" aria-hidden="true" focusable="false"><path fill="currentColor" d="M215 0H359V-570H549V-700H25V-570H215ZM653 0H797V-247H913L1029 0H1184L1065 -255C1131 -267 1162 -312 1162 -391V-560C1162 -655 1117 -700 1022 -700H653ZM797 -375V-570H998C1013 -570 1018 -565 1018 -550V-395C1018 -380 1013 -375 998 -375ZM1240 0H1392L1435 -152H1675L1718 0H1876L1663 -700H1453ZM1472 -284 1555 -578 1638 -284ZM1971 0H2111V-467L2386 0H2526V-700H2386V-249L2121 -700H1971ZM2807 0H3039C3134 0 3179 -45 3179 -140V-254H3035V-152C3035 -137 3030 -132 3015 -132H2831C2816 -132 2811 -137 2811 -152V-548C2811 -563 2816 -568 2831 -568H3015C3030 -568 3035 -563 3035 -548V-446H3179V-560C3179 -655 3134 -700 3039 -700H2807C2712 -700 2667 -655 2667 -560V-140C2667 -45 2712 0 2807 0ZM3236 0H3388L3431 -152H3671L3714 0H3872L3659 -700H3449ZM3468 -284 3551 -578 3634 -284Z"/></svg><span class="sr">Tranca</span></span></span><span class="p-s">2.000 pontos</span></div>
     <div class="gc" style="--c:#1f9a4a"><img src="assets/icons/buraco.webp" alt=""><span class="ttl"><span class="ol" data-em="3.7580"><svg viewBox="79 -700 3758 700" style="--em:3.7580" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H453C548 0 593 -45 593 -140V-250C593 -297 572 -336 522 -358C568 -383 585 -419 585 -466V-560C585 -655 540 -700 445 -700H79ZM223 -130V-296H429C444 -296 449 -291 449 -276V-150C449 -135 444 -130 429 -130ZM223 -420V-570H421C436 -570 441 -565 441 -550V-440C441 -425 436 -420 421 -420ZM855 0H1099C1194 0 1239 -45 1239 -140V-700H1095V-152C1095 -137 1090 -132 1075 -132H879C864 -132 859 -137 859 -152V-700H715V-140C715 -45 760 0 855 0ZM1390 0H1534V-247H1650L1766 0H1921L1802 -255C1868 -267 1899 -312 1899 -391V-560C1899 -655 1854 -700 1759 -700H1390ZM1534 -375V-570H1735C1750 -570 1755 -565 1755 -550V-395C1755 -380 1750 -375 1735 -375ZM1977 0H2129L2172 -152H2412L2455 0H2613L2400 -700H2190ZM2209 -284 2292 -578 2375 -284ZM2817 0H3049C3144 0 3189 -45 3189 -140V-254H3045V-152C3045 -137 3040 -132 3025 -132H2841C2826 -132 2821 -137 2821 -152V-548C2821 -563 2826 -568 2841 -568H3025C3040 -568 3045 -563 3045 -548V-446H3189V-560C3189 -655 3144 -700 3049 -700H2817C2722 -700 2677 -655 2677 -560V-140C2677 -45 2722 0 2817 0ZM3440 0H3697C3792 0 3837 -45 3837 -140V-560C3837 -655 3792 -700 3697 -700H3440C3345 -700 3300 -655 3300 -560V-140C3300 -45 3345 0 3440 0ZM3444 -152V-548C3444 -563 3449 -568 3464 -568H3673C3688 -568 3693 -563 3693 -548V-152C3693 -137 3688 -132 3673 -132H3464C3449 -132 3444 -137 3444 -152Z"/></svg><span class="sr">Buraco</span></span></span><span class="p-s">STBL e Aberto</span></div>
-    <div class="gc" style="--c:#3b74f5"><img src="assets/icons/poker.webp" alt=""><span class="ttl"><span class="ol" data-em="3.0750"><svg viewBox="79 -700 3075 700" style="--em:3.0750" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-234H449C544 -234 589 -279 589 -374V-560C589 -655 544 -700 449 -700H79ZM223 -366V-568H425C440 -568 445 -563 445 -548V-386C445 -371 440 -366 425 -366ZM828 0H1085C1180 0 1225 -45 1225 -140V-560C1225 -655 1180 -700 1085 -700H828C733 -700 688 -655 688 -560V-140C688 -45 733 0 828 0ZM832 -152V-548C832 -563 837 -568 852 -568H1061C1076 -568 1081 -563 1081 -548V-152C1081 -137 1076 -132 1061 -132H852C837 -132 832 -137 832 -152ZM1366 0H1508V-174L1610 -303L1775 0H1937L1707 -424L1926 -700H1757L1508 -372V-700H1366ZM2025 0H2496V-132H2169V-293H2434V-423H2169V-568H2496V-700H2025ZM2623 0H2767V-247H2883L2999 0H3154L3035 -255C3101 -267 3132 -312 3132 -391V-560C3132 -655 3087 -700 2992 -700H2623ZM2767 -375V-570H2968C2983 -570 2988 -565 2988 -550V-395C2988 -380 2983 -375 2968 -375Z"/></svg><span class="sr">Poker</span></span></span><span class="p-s">Texas Hold'em</span></div>
+    <div class="gc lock" style="--c:#5b6475"><img src="assets/icons/poker.webp" alt=""><span class="lk" aria-hidden="true"><svg><use href="#i-lock"/></svg></span><span class="ttl"><span class="ol" data-em="3.0750"><svg viewBox="79 -700 3075 700" style="--em:3.0750" aria-hidden="true" focusable="false"><path fill="currentColor" d="M79 0H223V-234H449C544 -234 589 -279 589 -374V-560C589 -655 544 -700 449 -700H79ZM223 -366V-568H425C440 -568 445 -563 445 -548V-386C445 -371 440 -366 425 -366ZM828 0H1085C1180 0 1225 -45 1225 -140V-560C1225 -655 1180 -700 1085 -700H828C733 -700 688 -655 688 -560V-140C688 -45 733 0 828 0ZM832 -152V-548C832 -563 837 -568 852 -568H1061C1076 -568 1081 -563 1081 -548V-152C1081 -137 1076 -132 1061 -132H852C837 -132 832 -137 832 -152ZM1366 0H1508V-174L1610 -303L1775 0H1937L1707 -424L1926 -700H1757L1508 -372V-700H1366ZM2025 0H2496V-132H2169V-293H2434V-423H2169V-568H2496V-700H2025ZM2623 0H2767V-247H2883L2999 0H3154L3035 -255C3101 -267 3132 -312 3132 -391V-560C3132 -655 3087 -700 2992 -700H2623ZM2767 -375V-570H2968C2983 -570 2988 -565 2988 -550V-395C2988 -380 2983 -375 2968 -375Z"/></svg><span class="sr">Poker</span></span></span><span class="soon">Em breve</span></div>
     <div class="gc" style="--c:#9f5cee"><img src="assets/icons/sinuca.webp" alt=""><span class="ttl"><span class="ol" data-em="3.5180"><svg viewBox="58 -700 3518 700" style="--em:3.5180" aria-hidden="true" focusable="false"><path fill="currentColor" d="M198 0H428C523 0 568 -45 568 -140V-256C568 -346 512 -381 424 -400L238 -440C212 -446 204 -452 204 -474V-550C204 -565 209 -570 224 -570H396C411 -570 416 -565 416 -550V-480H556V-560C556 -655 511 -700 416 -700H200C105 -700 60 -655 60 -560V-452C60 -362 116 -327 204 -308L390 -268C416 -262 424 -256 424 -234V-150C424 -135 419 -130 404 -130H218C203 -130 198 -135 198 -150V-228H58V-140C58 -45 103 0 198 0ZM705 0H849V-700H705ZM1007 0H1147V-467L1422 0H1562V-700H1422V-249L1157 -700H1007ZM1853 0H2097C2192 0 2237 -45 2237 -140V-700H2093V-152C2093 -137 2088 -132 2073 -132H1877C1862 -132 1857 -137 1857 -152V-700H1713V-140C1713 -45 1758 0 1853 0ZM2511 0H2743C2838 0 2883 -45 2883 -140V-254H2739V-152C2739 -137 2734 -132 2719 -132H2535C2520 -132 2515 -137 2515 -152V-548C2515 -563 2520 -568 2535 -568H2719C2734 -568 2739 -563 2739 -548V-446H2883V-560C2883 -655 2838 -700 2743 -700H2511C2416 -700 2371 -655 2371 -560V-140C2371 -45 2416 0 2511 0ZM2940 0H3092L3135 -152H3375L3418 0H3576L3363 -700H3153ZM3172 -284 3255 -578 3338 -284Z"/></svg><span class="sr">Sinuca</span></span></span><span class="p-s">Bola 8 · mesa 3D</span></div>
   </div>
   <div class="wrap">
@@ -1009,28 +1019,19 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
         <p class="fine">Em todos os jogos da tabela, ganhe quem ganhar a partida. As condições do programa valem como formalizadas no contrato de afiliado.</p></div>
       <div class="plan rv" style="--d:.1s"><span class="lbl">Boas-vindas do jogador</span><p class="price">20 jogos</p><p class="per">com a entrada por nossa conta</p>
         <ul><li><span><svg><use href="#i-check"/></svg>Seu indicado começa jogando</span></li><li><span><svg><use href="#i-check"/></svg>Mais conversão no seu link</span></li><li><span><svg><use href="#i-check"/></svg>Engaja desde a primeira mesa</span></li></ul></div>
-      <div class="plan rv" style="--d:.2s"><span class="lbl">Taxa por mesa</span><p class="price">5% a 10%</p><p class="per">do pote, conforme o jogo e o valor</p>
-        <ul><li><span><svg><use href="#i-check"/></svg>Taxa sobre o pote de cada mesa</span></li><li><span><svg><use href="#i-check"/></svg>Jogo entre jogadores</span></li><li><span><svg><use href="#i-check"/></svg>Mais mesas, mais renda pra você</span></li></ul>
-        <p class="fine">Tabela completa logo abaixo.</p></div>
+      <div class="plan rv" style="--d:.2s"><span class="lbl">Taxa por mesa</span><p class="price">10%</p><p class="per">do pote, em todos os jogos</p>
+        <ul><li><span><svg><use href="#i-check"/></svg>Mesma taxa em todas as mesas</span></li><li><span><svg><use href="#i-check"/></svg>Jogo entre jogadores</span></li><li><span><svg><use href="#i-check"/></svg>Mais mesas, mais renda pra você</span></li></ul>
+        <p class="fine">Jogo a jogo logo abaixo.</p></div>
     </div>
 
     <p class="lbl tx-h rv" data-stop="120">Tabela de taxas</p>
-    <div class="tx-top">
-      <div class="tg rv"><div class="tg-h"><img src="assets/icons/truco.webp" alt=""><b>Truco Paulista e Mineiro</b></div>
-        <table><tr><th>Valor da mesa</th><th>1x1</th><th>2x2</th></tr>
-          <tr><td>Até R$ 100</td><td><b>7%</b></td><td><b>6%</b></td></tr>
-          <tr><td>Acima de R$ 100</td><td><b>6%</b></td><td><b>5%</b></td></tr></table></div>
-      <div class="tg rv" style="--d:.08s"><div class="tg-h"><img src="assets/icons/cacheta.webp" alt="" style="filter:hue-rotate(40deg)"><b>Pif Paf</b></div>
-        <table><tr><th>Valor da mesa</th><th>Taxa</th></tr>
-          <tr><td>Até R$ 100</td><td><b>7%</b></td></tr>
-          <tr><td>Acima de R$ 100</td><td><b>6%</b></td></tr></table></div>
-    </div>
     <div class="tx-row">
-      <div class="tg rv"><div class="tg-h"><img src="assets/icons/cacheta.webp" alt=""><b>Cacheta</b></div><p class="meta">Todas as mesas</p><p class="rt">10%</p></div>
-      <div class="tg rv"><div class="tg-h"><img src="assets/icons/cacheta.webp" alt="" style="filter:hue-rotate(200deg)"><b>Cachetão</b></div><p class="meta">Mesas de 4, 5, 6, 9 e 10 lugares</p><p class="rt">10%</p></div>
-      <div class="tg rv"><div class="tg-h"><img src="assets/icons/crown.webp" alt=""><b>Cachetão Coco</b></div><p class="meta">1 vence tudo · mesas de 6 e 10 lugares</p><p class="rt">10%</p></div>
-      <div class="tg rv"><div class="tg-h"><img src="assets/icons/buraco.webp" alt=""><b>Buraco</b></div><p class="meta">STBL e Aberto · 2.000 pontos</p><p class="rt">10%</p></div>
+      <div class="tg rv"><div class="tg-h"><img src="assets/icons/truco.webp" alt=""><b>Truco</b></div><p class="meta">Paulista e Mineiro · 1x1 e 2x2</p><p class="rt">10%</p></div>
+      <div class="tg rv" style="--d:.06s"><div class="tg-h"><img src="assets/icons/cacheta.webp" alt=""><b>Cacheta</b></div><p class="meta">Pif Paf, Cachetão e Cachetão Coco</p><p class="rt">10%</p></div>
+      <div class="tg rv" style="--d:.12s"><div class="tg-h"><img src="assets/icons/buraco.webp" alt=""><b>Buraco</b></div><p class="meta">STBL e Aberto · 2.000 pontos</p><p class="rt">10%</p></div>
       <div class="tg rv"><div class="tg-h"><img src="assets/icons/tranca.webp" alt=""><b>Tranca</b></div><p class="meta">2.000 pontos</p><p class="rt">10%</p></div>
+      <div class="tg rv" style="--d:.06s"><div class="tg-h"><img src="assets/icons/sinuca.webp" alt=""><b>Sinuca</b></div><p class="meta">Bola 8 · mesa 3D</p><p class="rt">10%</p></div>
+      <div class="tg lock rv" style="--d:.12s"><div class="tg-h"><img src="assets/icons/poker.webp" alt=""><b>Poker</b></div><p class="meta">Texas Hold'em</p><p class="rt">10%<span class="soon"><svg><use href="#i-lock"/></svg>Em breve</span></p></div>
     </div>
   </div>
 </section>
@@ -1043,15 +1044,15 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radiu
     <div class="proj">
       <div class="cbox prem rv">
         <span class="lbl">Premissas</span>
-        <dl><div><dt>Novos jogadores por mês</dt><dd>300</dd></div><div><dt>Entradas por jogador/mês</dt><dd>40</dd></div><div><dt>Entrada média</dt><dd>R$ 50,00</dd></div><div><dt>Taxa média da mesa</dt><dd>7%</dd></div><div><dt>Sua parte por mês</dt><dd>50 · 45 · 40%</dd></div></dl>
-        <div class="pp"><span>Ganho por jogador ativo no 1º mês</span><b>R$ 70,00 / mês</b></div>
+        <dl><div><dt>Novos jogadores por mês</dt><dd>300</dd></div><div><dt>Entradas por jogador/mês</dt><dd>40</dd></div><div><dt>Entrada média</dt><dd>R$ 50,00</dd></div><div><dt>Taxa da mesa</dt><dd>10%</dd></div><div><dt>Sua parte por mês</dt><dd>50 · 45 · 40%</dd></div></dl>
+        <div class="pp"><span>Ganho por jogador ativo no 1º mês</span><b>R$ 100,00 / mês</b></div>
       </div>
       <div class="cbox mb3 rv" style="--d:.1s">
-          <div class="mb" style="--k:0.4167;--dd:0.00s"><b data-v="21000">R$ 21.000</b><i></i><span>Mês 1</span><small>300 jogadores ativos</small></div>
-          <div class="mb" style="--k:0.7500;--dd:0.12s"><b data-v="37800">R$ 37.800</b><i></i><span>Mês 2</span><small>600 jogadores ativos</small></div>
-          <div class="mb top" style="--k:1.0000;--dd:0.24s"><b data-v="50400">R$ 50.400</b><i></i><span>Mês 3</span><small>900 jogadores ativos</small></div>
+          <div class="mb" style="--k:0.4167;--dd:0.00s"><b data-v="30000">R$ 30.000</b><i></i><span>Mês 1</span><small>300 jogadores ativos</small></div>
+          <div class="mb" style="--k:0.7500;--dd:0.12s"><b data-v="54000">R$ 54.000</b><i></i><span>Mês 2</span><small>600 jogadores ativos</small></div>
+          <div class="mb top" style="--k:1.0000;--dd:0.24s"><b data-v="72000">R$ 72.000</b><i></i><span>Mês 3</span><small>900 jogadores ativos</small></div>
       </div>
-      <div class="tot rv" style="--d:.2s"><span>Total acumulado em 3 meses de operação</span><b data-v="109200">R$ 109.200</b></div>
+      <div class="tot rv" style="--d:.2s"><span>Total acumulado em 3 meses de operação</span><b data-v="156000">R$ 156.000</b></div>
     </div>
     <p class="disc rv">Estimativa ilustrativa, sem perda de jogadores. Valores reais variam conforme jogo, mesa e engajamento.</p>
   </div>
@@ -1251,7 +1252,7 @@ function onScroll() {
 addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, {passive: true});
 addEventListener('resize', () => { fit(); fitHall(); sizePhones(); onScroll(); });
 
-/* ===== Projeção: as barras sobem e os valores contam até o cenário (300 jogadores/mês, 40 entradas de R$ 50, taxa 7%, sua parte 50 · 45 · 40%) ===== */
+/* ===== Projeção: as barras sobem e os valores contam até o cenário (300 jogadores/mês, 40 entradas de R$ 50, taxa 10%, sua parte 50 · 45 · 40%) ===== */
 const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
 const vals = $$('#conta [data-v]');
 const REV = /[?&]revisao\b/.test(location.search);
